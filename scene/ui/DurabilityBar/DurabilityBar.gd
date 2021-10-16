@@ -12,11 +12,6 @@ func _ready():
 	randomize()
 
 
-func _process(delta):
-	if Input.is_action_just_pressed("ui_left_click"):
-		lose_durability()
-
-
 func lose_durability():
 	value -= default_lost
 	
