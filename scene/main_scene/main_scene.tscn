@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/living-floor.png" type="Texture" id=1]
 [ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/living-wall.png" type="Texture" id=2]
@@ -37,20 +37,107 @@
 [ext_resource path="res://image/game/House_interior_by_Styl0o/kitchen/individuals files/kitchen-drawer.png" type="Texture" id=35]
 [ext_resource path="res://image/game/House_interior_by_Styl0o/kitchen/individuals files/jars.png" type="Texture" id=36]
 [ext_resource path="res://image/game/House_interior_by_Styl0o/kitchen/individuals files/kitchen-shelf.png" type="Texture" id=37]
+[ext_resource path="res://image/game/pixel_platformer_player/idle/6.png" type="Texture" id=38]
+[ext_resource path="res://image/game/pixel_platformer_player/idle/7.png" type="Texture" id=39]
+[ext_resource path="res://image/game/pixel_platformer_player/idle/4.png" type="Texture" id=40]
+[ext_resource path="res://image/game/pixel_platformer_player/idle/2.png" type="Texture" id=41]
+[ext_resource path="res://image/game/pixel_platformer_player/idle/1.png" type="Texture" id=42]
+[ext_resource path="res://scene/main_scene/Player.gd" type="Script" id=43]
+[ext_resource path="res://image/game/pixel_platformer_player/idle/3.png" type="Texture" id=44]
+[ext_resource path="res://image/game/pixel_platformer_player/idle/5.png" type="Texture" id=45]
+[ext_resource path="res://scene/main_scene/Control.gd" type="Script" id=46]
+[ext_resource path="res://image/game/pixel_platformer_player/run/2.png" type="Texture" id=47]
+[ext_resource path="res://image/game/pixel_platformer_player/run/3.png" type="Texture" id=48]
+[ext_resource path="res://image/game/pixel_platformer_player/run/7.png" type="Texture" id=49]
+[ext_resource path="res://image/game/pixel_platformer_player/run/4.png" type="Texture" id=50]
+[ext_resource path="res://image/game/pixel_platformer_player/run/6.png" type="Texture" id=51]
+[ext_resource path="res://image/game/pixel_platformer_player/run/5.png" type="Texture" id=52]
+[ext_resource path="res://image/game/pixel_platformer_player/run/8.png" type="Texture" id=53]
+[ext_resource path="res://image/game/pixel_platformer_player/run/1.png" type="Texture" id=54]
+[ext_resource path="res://image/game/dog/bark/01.png" type="Texture" id=55]
+[ext_resource path="res://image/game/dog/idle/02.png" type="Texture" id=56]
+[ext_resource path="res://image/game/dog/idle/03.png" type="Texture" id=57]
+[ext_resource path="res://image/game/dog/idle/04.png" type="Texture" id=58]
+[ext_resource path="res://scene/main_scene/Dog.gd" type="Script" id=59]
+[ext_resource path="res://image/game/dog/bark/03.png" type="Texture" id=60]
+[ext_resource path="res://image/game/dog/idle/01.png" type="Texture" id=61]
+[ext_resource path="res://image/game/dog/bark/02.png" type="Texture" id=62]
+[ext_resource path="res://image/game/dog/run/02.png" type="Texture" id=63]
+[ext_resource path="res://image/game/dog/run/01.png" type="Texture" id=64]
+[ext_resource path="res://image/game/dog/run/04.png" type="Texture" id=65]
+[ext_resource path="res://image/game/dog/run/05.png" type="Texture" id=66]
+[ext_resource path="res://image/game/dog/run/06.png" type="Texture" id=67]
+[ext_resource path="res://image/game/dog/run/03.png" type="Texture" id=68]
+[ext_resource path="res://image/game/dog/bark/04.png" type="Texture" id=69]
+[ext_resource path="res://scene/main_scene/Kitchen.gd" type="Script" id=70]
+[ext_resource path="res://scene/main_scene/Bedroom.gd" type="Script" id=71]
+[ext_resource path="res://scene/main_scene/LivingRoom.gd" type="Script" id=72]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="NavigationPolygon" id=1]
+resource_local_to_scene = true
+vertices = PoolVector2Array( 1562.19, 497.353, 1567.04, 537.102, -1514.56, 542.531, 1262.46, 496.534, -1516.5, 452.369, -1276.46, 461.288, -1223.85, 477.919, -257.918, 468.268, -240.048, 456.496, -61.4309, 458.417, 775.662, 493.727, 792.613, 477.963, 822.667, 473.116, 872.111, 468.268, 897.695, 469.498, -37.0704, 452.756, 66.6644, 457.604, 98.8666, 479.839, 1139.69, 466.329, 1162.74, 461.815, 1122.24, 471.177, 309.692, 467.872, 367.31, 450.882, 387.176, 446.746, 504.483, 460.318, 539.87, 473.487, 567.201, 482.351, 206.274, 492.988, -463.135, 478.953, -441.151, 472.146, -417.883, 471.177, -396.554, 474.085, -381.14, 478.953, -279.247, 475.054, -309.485, 481.612, 1104.53, 471.714, 945.191, 470.007, 704.599, 489.738 )
+polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 2, 4, 5, 6 ), PoolIntArray( 7, 8, 9 ), PoolIntArray( 10, 11, 12, 13, 14 ), PoolIntArray( 15, 16, 17, 9 ), PoolIntArray( 18, 19, 3, 20 ), PoolIntArray( 21, 22, 23, 24, 25 ), PoolIntArray( 21, 25, 26, 27 ), PoolIntArray( 28, 29, 30, 31, 32 ), PoolIntArray( 33, 7, 9, 17 ), PoolIntArray( 27, 2, 6, 28, 34 ), PoolIntArray( 35, 20, 3, 10 ), PoolIntArray( 34, 33, 17, 27 ), PoolIntArray( 10, 14, 36 ), PoolIntArray( 10, 36, 35 ), PoolIntArray( 10, 3, 2 ), PoolIntArray( 37, 10, 2, 27 ), PoolIntArray( 27, 26, 37 ), PoolIntArray( 34, 28, 32 ) ]
+outlines = [ PoolVector2Array( 1562.19, 497.353, 1567.04, 537.102, -1514.56, 542.531, -1516.5, 452.369, -1276.46, 461.288, -1223.85, 477.919, -463.135, 478.953, -441.151, 472.146, -417.883, 471.177, -396.554, 474.085, -381.14, 478.953, -309.485, 481.612, -279.247, 475.054, -257.918, 468.268, -240.048, 456.496, -61.4309, 458.417, -37.0704, 452.756, 66.6644, 457.604, 98.8666, 479.839, 206.274, 492.988, 309.692, 467.872, 367.31, 450.882, 387.176, 446.746, 504.483, 460.318, 539.87, 473.487, 567.201, 482.351, 704.599, 489.738, 775.662, 493.727, 792.613, 477.963, 822.667, 473.116, 872.111, 468.268, 897.695, 469.498, 945.191, 470.007, 1104.53, 471.714, 1122.24, 471.177, 1139.69, 466.329, 1162.74, 461.815, 1262.46, 496.534 ) ]
 
-[node name="background" type="ColorRect" parent="."]
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 55 ), ExtResource( 62 ), ExtResource( 60 ), ExtResource( 69 ) ],
+"loop": true,
+"name": "bark",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 61 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 56 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 64 ), ExtResource( 63 ), ExtResource( 68 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ) ],
+"loop": true,
+"name": "run",
+"speed": 12.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 42 ), ExtResource( 41 ), ExtResource( 44 ), ExtResource( 40 ), ExtResource( 45 ), ExtResource( 38 ), ExtResource( 39 ) ],
+"loop": true,
+"name": "idle",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 54 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 50 ), ExtResource( 52 ), ExtResource( 51 ), ExtResource( 49 ), ExtResource( 53 ) ],
+"loop": true,
+"name": "run",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "interact",
+"speed": 5.0
+} ]
+
+[node name="Control" type="Control"]
+script = ExtResource( 46 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 1075.02, 290.035 )
+current = true
+
+[node name="Scene" type="Node2D" parent="."]
+
+[node name="background" type="ColorRect" parent="Scene"]
 margin_left = -1581.0
 margin_top = 2.0
-margin_right = 1598.0
+margin_right = 1633.0
 margin_bottom = 600.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="floor" type="TextureRect" parent="."]
+[node name="floor" type="TextureRect" parent="Scene"]
 margin_left = -696.0
 margin_top = 426.0
 margin_right = -186.0
@@ -61,7 +148,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="wall" type="TextureRect" parent="."]
+[node name="wall" type="TextureRect" parent="Scene"]
 margin_left = -674.0
 margin_top = 76.0
 margin_right = -194.0
@@ -73,9 +160,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="living_room" type="Node2D" parent="."]
+[node name="living_room" type="Node2D" parent="Scene"]
+script = ExtResource( 72 )
 
-[node name="board" type="TextureRect" parent="living_room"]
+[node name="board" type="TextureRect" parent="Scene/living_room"]
 margin_left = 522.623
 margin_top = 146.603
 margin_right = 755.623
@@ -86,7 +174,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="table" type="TextureRect" parent="living_room"]
+[node name="table" type="TextureRect" parent="Scene/living_room"]
 margin_left = 496.405
 margin_top = 330.936
 margin_right = 791.405
@@ -97,7 +185,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="computer" type="TextureRect" parent="living_room"]
+[node name="computer" type="TextureRect" parent="Scene/living_room"]
 margin_left = 613.106
 margin_top = 233.171
 margin_right = 761.106
@@ -108,7 +196,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="chair" type="TextureRect" parent="living_room"]
+[node name="chair" type="TextureRect" parent="Scene/living_room"]
 margin_left = 669.116
 margin_top = 313.784
 margin_right = 774.116
@@ -119,7 +207,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="flower_vase" type="TextureRect" parent="living_room"]
+[node name="flower_vase" type="TextureRect" parent="Scene/living_room"]
 margin_left = 546.636
 margin_top = 278.489
 margin_right = 605.636
@@ -130,7 +218,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="rug" type="TextureRect" parent="living_room"]
+[node name="rug" type="TextureRect" parent="Scene/living_room"]
 margin_left = 165.468
 margin_top = 434.354
 margin_right = 460.468
@@ -141,7 +229,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="lamp" type="TextureRect" parent="living_room"]
+[node name="lamp" type="TextureRect" parent="Scene/living_room"]
 margin_left = 258.418
 margin_top = 183.739
 margin_right = 380.418
@@ -152,7 +240,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="umbrella" type="TextureRect" parent="living_room"]
+[node name="umbrella" type="TextureRect" parent="Scene/living_room"]
 margin_left = 87.905
 margin_top = 336.846
 margin_right = 142.905
@@ -164,7 +252,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="armchair" type="TextureRect" parent="living_room"]
+[node name="armchair" type="TextureRect" parent="Scene/living_room"]
 margin_left = 118.93
 margin_top = 262.238
 margin_right = 345.93
@@ -176,9 +264,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="bedroom" type="Node2D" parent="."]
+[node name="bedroom" type="Node2D" parent="Scene"]
+script = ExtResource( 71 )
 
-[node name="window" type="TextureRect" parent="bedroom"]
+[node name="window" type="TextureRect" parent="Scene/bedroom"]
 margin_left = 1060.0
 margin_top = 111.0
 margin_right = 1234.0
@@ -189,7 +278,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="curtains_green" type="TextureRect" parent="bedroom"]
+[node name="curtains_green" type="TextureRect" parent="Scene/bedroom"]
 margin_left = 1048.0
 margin_top = 110.0
 margin_right = 1242.0
@@ -200,7 +289,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="bed" type="TextureRect" parent="bedroom"]
+[node name="bed" type="TextureRect" parent="Scene/bedroom"]
 margin_left = 1160.47
 margin_top = 223.352
 margin_right = 1585.47
@@ -211,7 +300,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="mirror" type="TextureRect" parent="bedroom"]
+[node name="mirror" type="TextureRect" parent="Scene/bedroom"]
 margin_left = 1299.0
 margin_top = 147.0
 margin_right = 1397.0
@@ -223,7 +312,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="dresser" type="TextureRect" parent="bedroom"]
+[node name="dresser" type="TextureRect" parent="Scene/bedroom"]
 margin_left = 875.045
 margin_top = 313.784
 margin_right = 1106.05
@@ -234,7 +323,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="books" type="TextureRect" parent="bedroom"]
+[node name="books" type="TextureRect" parent="Scene/bedroom"]
 margin_left = 952.387
 margin_top = 269.307
 margin_right = 1084.39
@@ -245,7 +334,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="clock" type="TextureRect" parent="bedroom"]
+[node name="clock" type="TextureRect" parent="Scene/bedroom"]
 margin_left = 848.919
 margin_top = 139.719
 margin_right = 943.919
@@ -256,9 +345,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="kitchen" type="Node2D" parent="."]
+[node name="kitchen" type="Node2D" parent="Scene"]
+script = ExtResource( 70 )
 
-[node name="wall" type="TextureRect" parent="kitchen"]
+[node name="wall" type="TextureRect" parent="Scene/kitchen"]
 margin_left = -1578.0
 margin_top = 77.0
 margin_right = -181.0
@@ -269,7 +359,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="floor" type="TextureRect" parent="kitchen"]
+[node name="floor" type="TextureRect" parent="Scene/kitchen"]
 margin_left = -1644.0
 margin_top = 427.0
 margin_right = -113.0
@@ -280,7 +370,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="fridge" type="TextureRect" parent="kitchen"]
+[node name="fridge" type="TextureRect" parent="Scene/kitchen"]
 margin_left = -625.623
 margin_top = 198.035
 margin_right = -464.623
@@ -291,7 +381,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="oven" type="TextureRect" parent="kitchen"]
+[node name="oven" type="TextureRect" parent="Scene/kitchen"]
 margin_left = -771.126
 margin_top = 322.0
 margin_right = -614.126
@@ -302,7 +392,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="cabinet" type="TextureRect" parent="kitchen"]
+[node name="cabinet" type="TextureRect" parent="Scene/kitchen"]
 margin_left = -902.729
 margin_top = 321.774
 margin_right = -738.729
@@ -314,7 +404,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="cabinet2" type="TextureRect" parent="kitchen"]
+[node name="cabinet2" type="TextureRect" parent="Scene/kitchen"]
 margin_left = -1026.13
 margin_top = 322.214
 margin_right = -862.132
@@ -326,7 +416,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="cabinet3" type="TextureRect" parent="kitchen"]
+[node name="cabinet3" type="TextureRect" parent="Scene/kitchen"]
 margin_left = -1151.75
 margin_top = 320.7
 margin_right = -987.75
@@ -338,7 +428,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="window" type="TextureRect" parent="kitchen"]
+[node name="window" type="TextureRect" parent="Scene/kitchen"]
 margin_left = -1014.71
 margin_top = 172.844
 margin_right = -800.713
@@ -349,7 +439,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="sink" type="TextureRect" parent="kitchen"]
+[node name="sink" type="TextureRect" parent="Scene/kitchen"]
 margin_left = -890.532
 margin_top = 320.774
 margin_right = -781.532
@@ -360,7 +450,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="shelves" type="TextureRect" parent="kitchen"]
+[node name="shelves" type="TextureRect" parent="Scene/kitchen"]
 margin_left = -456.899
 margin_top = 190.679
 margin_right = -262.899
@@ -371,7 +461,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="stool" type="TextureRect" parent="kitchen"]
+[node name="stool" type="TextureRect" parent="Scene/kitchen"]
 margin_left = -408.869
 margin_top = 381.513
 margin_right = -308.869
@@ -382,7 +472,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="boxes" type="TextureRect" parent="kitchen"]
+[node name="boxes" type="TextureRect" parent="Scene/kitchen"]
 margin_left = -437.309
 margin_top = 212.745
 margin_right = -360.309
@@ -393,7 +483,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="jars" type="TextureRect" parent="kitchen"]
+[node name="jars" type="TextureRect" parent="Scene/kitchen"]
 margin_left = -336.387
 margin_top = 262.0
 margin_right = -281.387
@@ -404,7 +494,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="wall_appliances" type="TextureRect" parent="kitchen"]
+[node name="wall_appliances" type="TextureRect" parent="Scene/kitchen"]
 margin_left = -762.08
 margin_top = 222.648
 margin_right = -646.08
@@ -415,7 +505,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="coffee" type="TextureRect" parent="kitchen"]
+[node name="coffee" type="TextureRect" parent="Scene/kitchen"]
 margin_left = -995.0
 margin_top = 266.0
 margin_right = -912.0
@@ -426,7 +516,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="bread" type="TextureRect" parent="kitchen"]
+[node name="bread" type="TextureRect" parent="Scene/kitchen"]
 margin_left = -440.648
 margin_top = 306.648
 margin_right = -388.648
@@ -437,7 +527,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="washing_machine" type="TextureRect" parent="kitchen"]
+[node name="washing_machine" type="TextureRect" parent="Scene/kitchen"]
 margin_left = -1249.0
 margin_top = 322.0
 margin_right = -1122.0
@@ -448,7 +538,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="dirt_laundry" type="TextureRect" parent="kitchen"]
+[node name="dirt_laundry" type="TextureRect" parent="Scene/kitchen"]
 margin_left = -1227.3
 margin_top = 269.874
 margin_right = -1139.3
@@ -459,7 +549,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="door" type="TextureRect" parent="kitchen"]
+[node name="door" type="TextureRect" parent="Scene/kitchen"]
 margin_left = -1489.13
 margin_top = 129.568
 margin_right = -1305.13
@@ -470,7 +560,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="carpet" type="TextureRect" parent="."]
+[node name="carpet" type="TextureRect" parent="Scene"]
 margin_left = -251.191
 margin_top = 425.0
 margin_right = -36.1908
@@ -481,7 +571,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="bookcase" type="TextureRect" parent="."]
+[node name="bookcase" type="TextureRect" parent="Scene"]
 margin_left = -253.0
 margin_top = 149.568
 margin_right = -61.0
@@ -491,3 +581,65 @@ stretch_mode = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="NavigationPolygon" type="Navigation2D" parent="."]
+
+[node name="polygon" type="NavigationPolygonInstance" parent="NavigationPolygon"]
+navpoly = SubResource( 1 )
+
+[node name="Dog" type="AnimatedSprite" parent="."]
+position = Vector2( -1398.75, 503.075 )
+scale = Vector2( 5, 5 )
+frames = SubResource( 3 )
+animation = "idle"
+frame = 2
+playing = true
+offset = Vector2( 0, -12 )
+script = ExtResource( 59 )
+
+[node name="Player" type="AnimatedSprite" parent="."]
+position = Vector2( 1108.78, 499.729 )
+scale = Vector2( 6.95575, 6.76008 )
+frames = SubResource( 2 )
+animation = "idle"
+frame = 3
+playing = true
+offset = Vector2( 0, -42 )
+script = ExtResource( 43 )
+
+[node name="Line2D" type="Line2D" parent="."]
+default_color = Color( 0.4, 0.501961, 1, 0 )
+
+[connection signal="gui_input" from="Scene/living_room/board" to="Scene/living_room" method="_on_board_gui_input"]
+[connection signal="gui_input" from="Scene/living_room/table" to="Scene/living_room" method="_on_table_gui_input"]
+[connection signal="gui_input" from="Scene/living_room/computer" to="Scene/living_room" method="_on_computer_gui_input"]
+[connection signal="gui_input" from="Scene/living_room/chair" to="Scene/living_room" method="_on_chair_gui_input"]
+[connection signal="gui_input" from="Scene/living_room/flower_vase" to="Scene/living_room" method="_on_flower_vase_gui_input"]
+[connection signal="gui_input" from="Scene/living_room/lamp" to="Scene/living_room" method="_on_lamp_gui_input"]
+[connection signal="gui_input" from="Scene/living_room/umbrella" to="Scene/living_room" method="_on_umbrella_gui_input"]
+[connection signal="gui_input" from="Scene/living_room/armchair" to="Scene/living_room" method="_on_armchair_gui_input"]
+[connection signal="gui_input" from="Scene/bedroom/window" to="Scene/bedroom" method="_on_window_gui_input"]
+[connection signal="gui_input" from="Scene/bedroom/curtains_green" to="Scene/bedroom" method="_on_curtains_green_gui_input"]
+[connection signal="gui_input" from="Scene/bedroom/bed" to="Scene/bedroom" method="_on_bed_gui_input"]
+[connection signal="gui_input" from="Scene/bedroom/mirror" to="Scene/bedroom" method="_on_mirror_gui_input"]
+[connection signal="gui_input" from="Scene/bedroom/dresser" to="Scene/bedroom" method="_on_dresser_gui_input"]
+[connection signal="gui_input" from="Scene/bedroom/books" to="Scene/bedroom" method="_on_books_gui_input"]
+[connection signal="gui_input" from="Scene/bedroom/clock" to="Scene/bedroom" method="_on_clock_gui_input"]
+[connection signal="gui_input" from="Scene/kitchen/fridge" to="Scene/kitchen" method="_on_fridge_gui_input"]
+[connection signal="gui_input" from="Scene/kitchen/oven" to="Scene/kitchen" method="_on_oven_gui_input"]
+[connection signal="gui_input" from="Scene/kitchen/cabinet" to="Scene/kitchen" method="_on_cabinet_gui_input"]
+[connection signal="gui_input" from="Scene/kitchen/cabinet2" to="Scene/kitchen" method="_on_cabinet2_gui_input"]
+[connection signal="gui_input" from="Scene/kitchen/cabinet3" to="Scene/kitchen" method="_on_cabinet3_gui_input"]
+[connection signal="gui_input" from="Scene/kitchen/window" to="Scene/kitchen" method="_on_window_gui_input"]
+[connection signal="gui_input" from="Scene/kitchen/sink" to="Scene/kitchen" method="_on_sink_gui_input"]
+[connection signal="gui_input" from="Scene/kitchen/shelves" to="Scene/kitchen" method="_on_shelves_gui_input"]
+[connection signal="gui_input" from="Scene/kitchen/stool" to="Scene/kitchen" method="_on_stool_gui_input"]
+[connection signal="gui_input" from="Scene/kitchen/boxes" to="Scene/kitchen" method="_on_boxes_gui_input"]
+[connection signal="gui_input" from="Scene/kitchen/jars" to="Scene/kitchen" method="_on_jars_gui_input"]
+[connection signal="gui_input" from="Scene/kitchen/wall_appliances" to="Scene/kitchen" method="_on_wall_appliances_gui_input"]
+[connection signal="gui_input" from="Scene/kitchen/coffee" to="Scene/kitchen" method="_on_coffee_gui_input"]
+[connection signal="gui_input" from="Scene/kitchen/bread" to="Scene/kitchen" method="_on_bread_gui_input"]
+[connection signal="gui_input" from="Scene/kitchen/washing_machine" to="Scene/kitchen" method="_on_washing_machine_gui_input"]
+[connection signal="gui_input" from="Scene/kitchen/dirt_laundry" to="Scene/kitchen" method="_on_dirt_laundry_gui_input"]
+[connection signal="gui_input" from="Scene/kitchen/door" to="Scene/kitchen" method="_on_door_gui_input"]
+[connection signal="gui_input" from="Scene/bookcase" to="." method="_on_bookcase_gui_input"]
