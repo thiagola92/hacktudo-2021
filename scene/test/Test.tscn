@@ -1,0 +1,94 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/sofa.png" type="Texture" id=1]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/bed.png" type="Texture" id=2]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/living-floor.png" type="Texture" id=3]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/living-wall.png" type="Texture" id=4]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/table.png" type="Texture" id=5]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/chair3.png" type="Texture" id=6]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/computer.png" type="Texture" id=7]
+
+[node name="Node" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Floor" type="TextureRect" parent="."]
+margin_left = -259.717
+margin_top = 490.516
+margin_right = 250.283
+margin_bottom = 528.516
+rect_scale = Vector2( 3, 3 )
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wall" type="TextureRect" parent="."]
+margin_left = -260.362
+margin_top = 136.874
+margin_right = 219.638
+margin_bottom = 254.874
+rect_scale = Vector2( 3, 3 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Table" type="TextureRect" parent="."]
+margin_left = 314.114
+margin_top = 408.92
+margin_right = 381.114
+margin_bottom = 445.92
+rect_scale = Vector2( 3, 3 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Armchair" type="TextureRect" parent="."]
+margin_left = 4.32043
+margin_top = 400.136
+margin_right = 53.3204
+margin_bottom = 446.136
+rect_scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Chair2" type="TextureRect" parent="."]
+margin_left = 367.363
+margin_top = 362.996
+margin_right = 413.363
+margin_bottom = 403.996
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bed" type="TextureRect" parent="."]
+margin_left = 721.378
+margin_top = 404.893
+margin_right = 819.378
+margin_bottom = 458.893
+rect_scale = Vector2( 3, 3 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Chair" type="TextureRect" parent="."]
+margin_left = 401.567
+margin_top = 420.693
+margin_right = 422.567
+margin_bottom = 461.693
+rect_scale = Vector2( 3, 3 )
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

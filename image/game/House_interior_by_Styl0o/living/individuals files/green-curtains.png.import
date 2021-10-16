@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/green-curtains.png-5d8712b554908f33a8a1faef8cdf4333.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://image/game/House_interior_by_Styl0o/living/individuals files/green-curtains.png"
+dest_files=[ "res://.import/green-curtains.png-5d8712b554908f33a8a1faef8cdf4333.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
