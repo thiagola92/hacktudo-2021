@@ -2,7 +2,7 @@ extends GridContainer
 
 
 func _ready():
-	pass
+	print(GlobalTest.actions[0]['nome'])
 
 
 func add_line():
