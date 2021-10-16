@@ -81,23 +81,23 @@
 [ext_resource path="res://font/hf-free-complete/equipment-pro-v1.1/EquipmentPro.otf" type="DynamicFontData" id=79]
 [ext_resource path="res://scene/main_scene/HUD.gd" type="Script" id=80]
 
-[sub_resource type="NavigationPolygon" id=11]
+[sub_resource type="NavigationPolygon" id=1]
 resource_local_to_scene = true
 vertices = PoolVector2Array( 1562.19, 497.353, 1567.04, 537.102, -1514.56, 542.531, 1262.46, 496.534, -1516.5, 452.369, -1276.46, 461.288, -1223.85, 477.919, -257.918, 468.268, -240.048, 456.496, -61.4309, 458.417, 775.662, 493.727, 792.613, 477.963, 822.667, 473.116, 872.111, 468.268, 897.695, 469.498, -37.0704, 452.756, 66.6644, 457.604, 98.8666, 479.839, 1139.69, 466.329, 1162.74, 461.815, 1122.24, 471.177, 309.692, 467.872, 367.31, 450.882, 387.176, 446.746, 504.483, 460.318, 539.87, 473.487, 567.201, 482.351, 206.274, 492.988, -463.135, 478.953, -441.151, 472.146, -417.883, 471.177, -396.554, 474.085, -381.14, 478.953, -279.247, 475.054, -309.485, 481.612, 1104.53, 471.714, 945.191, 470.007, 704.599, 489.738 )
 polygons = [ PoolIntArray( 0, 1, 2, 3 ), PoolIntArray( 2, 4, 5, 6 ), PoolIntArray( 7, 8, 9 ), PoolIntArray( 10, 11, 12, 13, 14 ), PoolIntArray( 15, 16, 17, 9 ), PoolIntArray( 18, 19, 3, 20 ), PoolIntArray( 21, 22, 23, 24, 25 ), PoolIntArray( 21, 25, 26, 27 ), PoolIntArray( 28, 29, 30, 31, 32 ), PoolIntArray( 33, 7, 9, 17 ), PoolIntArray( 27, 2, 6, 28, 34 ), PoolIntArray( 35, 20, 3, 10 ), PoolIntArray( 34, 33, 17, 27 ), PoolIntArray( 10, 14, 36 ), PoolIntArray( 10, 36, 35 ), PoolIntArray( 10, 3, 2 ), PoolIntArray( 37, 10, 2, 27 ), PoolIntArray( 27, 26, 37 ), PoolIntArray( 34, 28, 32 ) ]
 outlines = [ PoolVector2Array( 1562.19, 497.353, 1567.04, 537.102, -1514.56, 542.531, -1516.5, 452.369, -1276.46, 461.288, -1223.85, 477.919, -463.135, 478.953, -441.151, 472.146, -417.883, 471.177, -396.554, 474.085, -381.14, 478.953, -309.485, 481.612, -279.247, 475.054, -257.918, 468.268, -240.048, 456.496, -61.4309, 458.417, -37.0704, 452.756, 66.6644, 457.604, 98.8666, 479.839, 206.274, 492.988, 309.692, 467.872, 367.31, 450.882, 387.176, 446.746, 504.483, 460.318, 539.87, 473.487, 567.201, 482.351, 704.599, 489.738, 775.662, 493.727, 792.613, 477.963, 822.667, 473.116, 872.111, 468.268, 897.695, 469.498, 945.191, 470.007, 1104.53, 471.714, 1122.24, 471.177, 1139.69, 466.329, 1162.74, 461.815, 1262.46, 496.534 ) ]
 
-[sub_resource type="SpriteFrames" id=12]
+[sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [  ],
-"loop": true,
-"name": "interact",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 42 ), ExtResource( 41 ), ExtResource( 44 ), ExtResource( 40 ), ExtResource( 45 ), ExtResource( 38 ), ExtResource( 39 ) ],
 "loop": true,
 "name": "idle",
 "speed": 12.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "interact",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 54 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 50 ), ExtResource( 52 ), ExtResource( 51 ), ExtResource( 49 ), ExtResource( 53 ) ],
 "loop": true,
@@ -105,16 +105,16 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="SpriteFrames" id=13]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 55 ), ExtResource( 62 ), ExtResource( 60 ), ExtResource( 69 ) ],
-"loop": true,
-"name": "bark",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 61 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 56 ) ],
 "loop": true,
 "name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 55 ), ExtResource( 62 ), ExtResource( 60 ), ExtResource( 69 ) ],
+"loop": true,
+"name": "bark",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 64 ), ExtResource( 63 ), ExtResource( 68 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ) ],
@@ -123,27 +123,27 @@ animations = [ {
 "speed": 12.0
 } ]
 
-[sub_resource type="DynamicFont" id=14]
+[sub_resource type="DynamicFont" id=4]
 font_data = ExtResource( 79 )
 
-[sub_resource type="Theme" id=15]
-default_font = SubResource( 14 )
+[sub_resource type="Theme" id=5]
+default_font = SubResource( 4 )
 
-[sub_resource type="StyleBoxTexture" id=16]
+[sub_resource type="StyleBoxTexture" id=6]
 texture = ExtResource( 75 )
 region_rect = Rect2( 0, 0, 266, 17 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=7]
 font_data = ExtResource( 79 )
 
-[sub_resource type="Theme" id=10]
-default_font = SubResource( 9 )
+[sub_resource type="Theme" id=8]
+default_font = SubResource( 7 )
 
-[sub_resource type="StyleBoxTexture" id=17]
+[sub_resource type="StyleBoxTexture" id=9]
 texture = ExtResource( 78 )
 region_rect = Rect2( 0, 0, 270, 21 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=10]
 size = 41
 extra_spacing_char = 4
 font_data = ExtResource( 74 )
@@ -614,13 +614,14 @@ __meta__ = {
 [node name="NavigationPolygon" type="Navigation2D" parent="."]
 
 [node name="polygon" type="NavigationPolygonInstance" parent="NavigationPolygon"]
-navpoly = SubResource( 11 )
+navpoly = SubResource( 1 )
 
 [node name="Player" type="AnimatedSprite" parent="."]
 position = Vector2( 1108.78, 499.729 )
 scale = Vector2( 6.95575, 6.76008 )
-frames = SubResource( 12 )
+frames = SubResource( 2 )
 animation = "idle"
+frame = 5
 playing = true
 offset = Vector2( 0, -42 )
 script = ExtResource( 43 )
@@ -628,9 +629,9 @@ script = ExtResource( 43 )
 [node name="Dog" type="AnimatedSprite" parent="."]
 position = Vector2( -1398.75, 503.075 )
 scale = Vector2( 5, 5 )
-frames = SubResource( 13 )
+frames = SubResource( 3 )
 animation = "idle"
-frame = 2
+frame = 1
 playing = true
 offset = Vector2( 0, -12 )
 script = ExtResource( 59 )
@@ -662,8 +663,8 @@ margin_left = 575.0
 margin_top = 11.51
 margin_right = 845.0
 margin_bottom = 32.51
-theme = SubResource( 15 )
-custom_styles/fg = SubResource( 16 )
+theme = SubResource( 5 )
+custom_styles/fg = SubResource( 6 )
 value = 100.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -684,8 +685,8 @@ margin_left = 575.0
 margin_top = 46.929
 margin_right = 845.0
 margin_bottom = 67.929
-theme = SubResource( 10 )
-custom_styles/fg = SubResource( 17 )
+theme = SubResource( 8 )
+custom_styles/fg = SubResource( 9 )
 value = 100.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -718,7 +719,7 @@ margin_top = 19.4564
 margin_right = 1574.84
 margin_bottom = 74.4564
 rect_pivot_offset = Vector2( 65.0161, 118.05 )
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -729,7 +730,7 @@ margin_top = 22.7842
 margin_right = 1011.0
 margin_bottom = 65.7842
 rect_pivot_offset = Vector2( 65.0161, 118.05 )
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

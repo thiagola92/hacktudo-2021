@@ -1,6 +1,12 @@
 extends Node
 
+#Status
 var money = 1234
+var time = "12:12"
+var currentDay = 1
+var health = 100
+var humor = 100
+
 var newStock = []
 var ownedStock : Array = []
 
