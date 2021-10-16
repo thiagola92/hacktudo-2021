@@ -21,9 +21,6 @@ func _on_board_gui_input(_event):
 func _on_table_gui_input(_event):
 	pass # Replace with function body.
 
-func _on_computer_gui_input(_event):
-	pass # Replace with function body.
-
 func _on_chair_gui_input(_event):
 	pass # Replace with function body.
 

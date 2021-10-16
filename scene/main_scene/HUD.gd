@@ -5,28 +5,26 @@ extends Node2D
 # var a = 2
 # var b = "text"
 
-var initialMoney = 1234
-var initialHour = "01:23"
-var currentDay = 1
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$clockLabel.text = initialHour
-	$moneyLabel.text = String(initialMoney)
-	$mentalHealth_fill.value = 100
-	$health_fill.value = 100
-	
-	pass # Replace with function body.
+	pass
+
+func _process(delta):
+	$clockLabel.text = Global.time
+	$moneyLabel.text = String(Global.money)
+	$mentalHealth_fill.value = Global.humor
+	$health_fill.value = Global.health	
 
 func processHealth (newHealth):
 	$health_fill.value = newHealth
+	Global.health = newHealth
 	
 	if ($health_fill.value == 0): #game over?
 		pass
 
 func processMentalHealth (newHealth):
 	$mentalHealth_fill.value = newHealth
+	Global.humor = newHealth
 	
 	if ($mentalHealth_fill.value == 0): #game over?
 		pass
@@ -38,6 +36,7 @@ func addOrRemoveMoney (money):
 		pass
 	
 	$moneyLabel.text = String(currentMoney)
+	Global.money = currentMoney
 	
 func verifyHour (currentTime, hourSpent):
 	var currentHour = currentTime[0]
@@ -67,9 +66,14 @@ func passTime (hourSpent, minuteSpent):
 
 	currentTime = verifyHour(currentTime, hourSpent)
 	currentTime = verifyMinute(currentTime, minuteSpent)
-	print(currentTime)
 	
 	$clockLabel.text = String(currentTime[0]) + ":" + String(currentTime[1])
-		
+	Global.time = String(currentTime[0]) + ":" + String(currentTime[1])
+	
 func passDay ():
-	currentDay += 1
+	Global.currentDay += 1
+
+
+func _on_computer_gui_input(event):
+	if Input.is_action_just_pressed("ui_left_click"):
+		$Window.popup_centered()

@@ -8,7 +8,6 @@ func _ready():
 func _on_Computer_gui_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == BUTTON_LEFT:
-			print("hi :(")
 			get_tree().paused = true
 			$AcceptDialog.popup_centered()
 
