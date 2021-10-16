@@ -24,6 +24,15 @@ func _input(event):
 	
 	Player.path = new_path
 	Player.change_state(MOVE)
-	
-# sprites actions
 
+
+func _on_carpet_gui_input(event):
+	pass # Replace with function body.
+
+
+func _on_bookcase_gui_input(event):
+	pass # Replace with function body.
+
+
+func _on_clock_gui_input(event):
+	pass # Replace with function body.
