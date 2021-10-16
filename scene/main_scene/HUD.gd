@@ -7,13 +7,13 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	pass
+
+func _process(delta):
 	$clockLabel.text = Global.time
 	$moneyLabel.text = String(Global.money)
 	$mentalHealth_fill.value = Global.humor
-	$health_fill.value = Global.health
-	
-	pass # Replace with function body.
+	$health_fill.value = Global.health	
 
 func processHealth (newHealth):
 	$health_fill.value = newHealth
@@ -72,3 +72,8 @@ func passTime (hourSpent, minuteSpent):
 	
 func passDay ():
 	Global.currentDay += 1
+
+
+func _on_computer_gui_input(event):
+	if Input.is_action_just_pressed("ui_left_click"):
+		$Window.popup_centered()

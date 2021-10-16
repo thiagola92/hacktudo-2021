@@ -1,4 +1,4 @@
-[gd_scene load_steps=91 format=2]
+[gd_scene load_steps=92 format=2]
 
 [ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/living-floor.png" type="Texture" id=1]
 [ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/living-wall.png" type="Texture" id=2]
@@ -80,6 +80,7 @@
 [ext_resource path="res://image/game/hud/BarV8_ProgressBar.png" type="Texture" id=78]
 [ext_resource path="res://font/hf-free-complete/equipment-pro-v1.1/EquipmentPro.otf" type="DynamicFontData" id=79]
 [ext_resource path="res://scene/main_scene/HUD.gd" type="Script" id=80]
+[ext_resource path="res://scene/ui/Computer/Computer.tscn" type="PackedScene" id=81]
 
 [sub_resource type="NavigationPolygon" id=1]
 resource_local_to_scene = true
@@ -621,8 +622,7 @@ position = Vector2( 1108.78, 499.729 )
 scale = Vector2( 6.95575, 6.76008 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 5
-playing = true
+frame = 2
 offset = Vector2( 0, -42 )
 script = ExtResource( 43 )
 
@@ -631,8 +631,6 @@ position = Vector2( -1398.75, 503.075 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 3 )
 animation = "idle"
-frame = 1
-playing = true
 offset = Vector2( 0, -12 )
 script = ExtResource( 59 )
 
@@ -735,9 +733,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Window" parent="Camera2D/HUD" instance=ExtResource( 81 )]
+
 [connection signal="gui_input" from="Scene/living_room/board" to="Scene/living_room" method="_on_board_gui_input"]
 [connection signal="gui_input" from="Scene/living_room/table" to="Scene/living_room" method="_on_table_gui_input"]
-[connection signal="gui_input" from="Scene/living_room/computer" to="Scene/living_room" method="_on_computer_gui_input"]
+[connection signal="gui_input" from="Scene/living_room/computer" to="Camera2D/HUD" method="_on_computer_gui_input"]
 [connection signal="gui_input" from="Scene/living_room/chair" to="Scene/living_room" method="_on_chair_gui_input"]
 [connection signal="gui_input" from="Scene/living_room/flower_vase" to="Scene/living_room" method="_on_flower_vase_gui_input"]
 [connection signal="gui_input" from="Scene/living_room/lamp" to="Scene/living_room" method="_on_lamp_gui_input"]
@@ -768,3 +768,5 @@ __meta__ = {
 [connection signal="gui_input" from="Scene/kitchen/dirt_laundry" to="Scene/kitchen" method="_on_dirt_laundry_gui_input"]
 [connection signal="gui_input" from="Scene/kitchen/door" to="Scene/kitchen" method="_on_door_gui_input"]
 [connection signal="gui_input" from="Scene/bookcase" to="." method="_on_bookcase_gui_input"]
+[connection signal="about_to_show" from="Camera2D/HUD/Window" to="." method="_on_Window_about_to_show"]
+[connection signal="popup_hide" from="Camera2D/HUD/Window" to="." method="_on_Window_popup_hide"]
