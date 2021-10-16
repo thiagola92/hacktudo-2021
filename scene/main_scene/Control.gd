@@ -24,3 +24,6 @@ func _input(event):
 	
 	Player.path = new_path
 	Player.change_state(MOVE)
+	
+# sprites actions
+
