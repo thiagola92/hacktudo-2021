@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://font/hf-free-complete/equipment-pro-v1.1/EquipmentPro.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://scene/Exit.gd" type="Script" id=2]
 [ext_resource path="res://scene/Rules.gd" type="Script" id=3]
+[ext_resource path="res://scene/Play.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFont" id=6]
 size = 56
@@ -80,6 +81,7 @@ custom_styles/normal = SubResource( 5 )
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Jogar"
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -116,5 +118,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[connection signal="pressed" from="VBoxContainer/Play" to="VBoxContainer/Play" method="_on_Play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Rules" to="VBoxContainer/Rules" method="_on_Rules_pressed"]
 [connection signal="pressed" from="VBoxContainer/Exit" to="VBoxContainer/Exit" method="_on_Exit_pressed"]
