@@ -81,7 +81,7 @@
 [ext_resource path="res://font/hf-free-complete/equipment-pro-v1.1/EquipmentPro.otf" type="DynamicFontData" id=79]
 [ext_resource path="res://scene/main_scene/HUD.gd" type="Script" id=80]
 [ext_resource path="res://scene/ui/Computer/Computer.tscn" type="PackedScene" id=81]
-[ext_resource path="res://scene/test/RefrigeratorMenu/RefrigeratorMenu.tscn" type="PackedScene" id=82]
+[ext_resource path="res://scene/ui/RefrigeratorMenu/RefrigeratorMenu.tscn" type="PackedScene" id=82]
 
 [sub_resource type="NavigationPolygon" id=1]
 resource_local_to_scene = true
