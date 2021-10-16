@@ -6,4 +6,4 @@ func _ready():
 
 
 func _on_Quit_pressed():
-	$Confirm.popup()
+	$Confirm.popup_centered()
