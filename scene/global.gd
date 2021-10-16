@@ -1,8 +1,8 @@
 extends Node
 
-
+var money = 1234
 var newStock = []
-var ownedStock = []
+var ownedStock = [] : Array
 
 
 func _ready():
