@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://font/hf-free-complete/equipment-pro-v1.1/EquipmentPro.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://scene/Exit.gd" type="Script" id=2]
 
 [sub_resource type="DynamicFont" id=1]
 size = 56
@@ -96,6 +97,9 @@ custom_styles/normal = SubResource( 5 )
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Sair"
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[connection signal="pressed" from="Exit" to="Exit" method="_on_Exit_pressed"]
