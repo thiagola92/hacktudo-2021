@@ -6,8 +6,10 @@ func _ready():
 
 
 func _process(delta):
-	position.x += 1
+	pc_health()
 	
+
+func pc_health():
 	$Health.value -= 1
 	
 	if $Health.value == 0:
