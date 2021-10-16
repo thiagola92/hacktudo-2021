@@ -1,4 +1,4 @@
-
+extends Node2D
 
 # Declare member variables here. Examples:
 # var a = 2
@@ -15,29 +15,26 @@ func _ready():
 #	pass
 
 
-func _on_clock_gui_input(event):
+func _on_clock_gui_input(_event):
 	pass # Replace with function body.
 
 
-func _on_books_gui_input(event):
+func _on_books_gui_input(_event):
 	pass # Replace with function body.
 
 
-func _on_dresser_gui_input(event):
+func _on_dresser_gui_input(_event):
 	pass # Replace with function body.
 
 
-func _on_mirror_gui_input(event):
+func _on_mirror_gui_input(_event):
 	pass # Replace with function body.
 
-
-func _on_bed_gui_input(event):
+func _on_bed_gui_input(_event):
 	pass # Replace with function body.
 
-
-func _on_curtains_green_gui_input(event):
+func _on_curtains_green_gui_input(_event):
 	pass # Replace with function body.
 
-
-func _on_window_gui_input(event):
+func _on_window_gui_input(_event):
 	pass # Replace with function body.
