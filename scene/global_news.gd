@@ -34,5 +34,3 @@ func pick_two ():
 	newsOfTheDay.clear()
 	newsOfTheDay.append(news[randi()%14])
 	newsOfTheDay.append(news[randi()%14])
-	
-	print(newsOfTheDay)
