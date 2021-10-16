@@ -6,7 +6,7 @@ onready var nav2D : Navigation2D = $NavigationPolygon
 onready var line2D : Line2D = $Line2D
 onready var Player : AnimatedSprite = $Player
 
-func _process(delta):
+func _process(_delta):
 	if ($Player.position.x < -1040):
 		$Camera2D.position.x = -1040
 	elif ($Player.position.x > 1121):
@@ -14,7 +14,7 @@ func _process(delta):
 	else:
 		$Camera2D.position.x = $Player.position.x
 
-func _input(event): 
+func _input(_event): 
 	if !Input.is_action_pressed("ui_left_click"):
 		return
 
@@ -26,13 +26,9 @@ func _input(event):
 	Player.change_state(MOVE)
 
 
-func _on_carpet_gui_input(event):
+func _on_bookcase_gui_input(_event):
 	pass # Replace with function body.
 
 
-func _on_bookcase_gui_input(event):
-	pass # Replace with function body.
-
-
-func _on_clock_gui_input(event):
+func _on_clock_gui_input(_event):
 	pass # Replace with function body.

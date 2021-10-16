@@ -37,7 +37,7 @@ func move_along_path(distance):
 	if(starting_point.x > path[0].x):
 		self.set_flip_h( true )	
 	
-	for i in range(path.size()):
+	for _i in range(path.size()):
 		var distance_to_next : = starting_point.distance_to(path[0])
 		
 		if (distance <= distance_to_next):
