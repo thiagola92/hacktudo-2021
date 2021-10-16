@@ -43,7 +43,8 @@ func increase_initial_stock(initial_stock, pos):
 	
 	s['initial_stock'] += initial_stock
 	s['current_stock'] += initial_stock
-	s['variation'] = (s['current_stock'] - s['initial_stock']) / s['initial_stock']
+	s['balance'] += initial_stock
+	s['variation'] = Global.calc_variation(s['initial_stock'], s['current_stock'])
 	
 	Global.ownedStock[pos] = s
 	Global.money -= initial_stock
@@ -55,6 +56,7 @@ func add_new_initial_stock(initial_stock):
 		'name': stock['name'],
 		'initial_stock': initial_stock,
 		'current_stock': initial_stock,
+		'balance': initial_stock,
 		'variation': 0,
 		'cluster': stock['cluster'],
 		'type': stock['type']

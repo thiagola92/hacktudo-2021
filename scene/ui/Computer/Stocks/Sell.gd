@@ -20,29 +20,27 @@ func _on_Sell_pressed():
 	position = get_meta("position")
 	stock = Global.ownedStock[position]
 	
-	$ConfirmationDialog/CenterContainer/HSlider.max_value = stock['current_stock']
+	$ConfirmationDialog/CenterContainer/HSlider.max_value = stock['balance']
 	$ConfirmationDialog.popup_centered()
 
 
 func _on_ConfirmationDialog_ok_pressed():
-	var current_stock = $ConfirmationDialog/CenterContainer/HSlider.value
+	var balance = $ConfirmationDialog/CenterContainer/HSlider.value
 	
-	if current_stock == 0:
+	if balance == 0:
 		return
 	
 	var s = Global.ownedStock[position]
 	
-	if current_stock == s['current_stock']:
-		Global.money += current_stock
+	if balance == s['balance']:
+		Global.money += balance
 		Global.ownedStock.remove(position)
-		return
+		return emit_signal("on_sell")
 	
-#	s['initial_stock'] += initial_stock
-#	s['current_stock'] += initial_stock
-#	s['variation'] = (s['current_stock'] - s['initial_stock']) / s['initial_stock']
-#
-#	Global.ownedStock[pos] = s
-#	Global.money -= initial_stock
+	s['balance'] -= balance
+
+	Global.ownedStock[position] = s
+	Global.money += balance
 	
 	emit_signal("on_sell")
 
