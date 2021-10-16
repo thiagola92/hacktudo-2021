@@ -16,7 +16,7 @@ func _ready():
 
 func _on_Sell_pressed():
 	position = get_meta("position")
-	stock = Global.ownedStock[position]
+	stock = GlobalStocks.ownedStock[position]
 	
 	$ConfirmationDialog/CenterContainer/HSlider.max_value = stock['balance']
 	$ConfirmationDialog.popup_centered()
@@ -28,16 +28,17 @@ func _on_ConfirmationDialog_ok_pressed():
 	if balance == 0:
 		return
 	
-	var s = Global.ownedStock[position]
+	Global.passTime(0, 15)
+	var s = GlobalStocks.ownedStock[position]
 	
 	if balance == s['balance']:
 		Global.money += balance
-		Global.ownedStock.remove(position)
+		GlobalStocks.ownedStock.remove(position)
 		return emit_signal("on_sell")
 	
 	s['balance'] -= balance
 
-	Global.ownedStock[position] = s
+	GlobalStocks.ownedStock[position] = s
 	Global.money += balance
 	
 	emit_signal("on_sell")
