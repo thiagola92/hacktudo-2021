@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/sofa.png" type="Texture" id=1]
 [ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/bed.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/table.png" type="Texture" id=5]
 [ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/chair3.png" type="Texture" id=6]
 [ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/computer.png" type="Texture" id=7]
+[ext_resource path="res://scene/test/Computer.gd" type="Script" id=8]
 [ext_resource path="res://scene/test/Camera2D.gd" type="Script" id=9]
 
 [node name="Node" type="Control"]
@@ -81,15 +82,16 @@ margin_right = 413.363
 margin_bottom = 323.361
 rect_scale = Vector2( 2, 2 )
 texture = ExtResource( 7 )
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Bed" type="TextureRect" parent="Camera2D"]
-margin_left = 721.378
-margin_top = 324.258
-margin_right = 819.378
-margin_bottom = 378.258
+margin_left = 726.675
+margin_top = 321.08
+margin_right = 824.675
+margin_bottom = 375.08
 rect_scale = Vector2( 3, 3 )
 texture = ExtResource( 2 )
 __meta__ = {
@@ -106,3 +108,5 @@ texture = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[connection signal="gui_input" from="Camera2D/Computer" to="Camera2D/Computer" method="_on_Computer_gui_input"]
