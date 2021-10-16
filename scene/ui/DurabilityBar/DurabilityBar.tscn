@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://image/ui/lifebar_fill.png" type="Texture" id=1]
+[ext_resource path="res://image/ui/lifebar_bg.png" type="Texture" id=2]
+[ext_resource path="res://scene/ui/DurabilityBar/DurabilityBar.gd" type="Script" id=3]
+
+[node name="DurabilityBar" type="TextureProgress"]
+margin_right = 121.0
+margin_bottom = 20.0
+texture_under = ExtResource( 2 )
+texture_progress = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
