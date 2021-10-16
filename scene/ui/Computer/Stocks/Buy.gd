@@ -9,8 +9,6 @@ var stock
 
 
 func _ready():
-	set_meta("position", 0)
-	
 	var ok_button = $ConfirmationDialog.get_ok()
 	
 	ok_button.connect("button_down", self, "_on_ConfirmationDialog_ok_pressed")

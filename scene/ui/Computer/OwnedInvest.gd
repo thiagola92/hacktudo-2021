@@ -16,8 +16,8 @@ func reload():
 	clear()
 	add_Headers()
 	
-	for stock in Global.ownedStock:
-		add_stock(stock)
+	for pos in range(0, Global.ownedStock.size()):
+		add_stock(Global.ownedStock[pos], pos)
 
 
 func clear():
@@ -41,7 +41,7 @@ func add_Headers():
 		add_child(item)
 
 
-func add_stock(stock):
+func add_stock(stock, position):
 	var _name = Text.instance()
 	var initial_stock = Text.instance()
 	var balance = Variation.instance()
@@ -52,6 +52,7 @@ func add_stock(stock):
 	initial_stock.text = "R$%s" % str(stock['initial_stock'])
 	balance.set_stock(stock)
 	variation.set_index(stock['variation'])
+	sell.set_meta("position", position)
 	sell.connect("on_sell", self, "reload")
 	
 	for item in [_name, initial_stock, balance, variation, sell]:
