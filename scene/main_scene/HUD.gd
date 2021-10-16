@@ -18,3 +18,12 @@ func _process(delta):
 func _on_computer_gui_input(event):
 	if Input.is_action_just_pressed("ui_left_click"):
 		$Window.popup_centered()
+
+
+func _on_fridge_gui_input(event):
+	if Input.is_action_just_pressed("ui_left_click"):
+		$WindowDialog.popup_centered()
+
+
+func _on_WindowDialog_about_to_show():
+	pass # Replace with function body.

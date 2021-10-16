@@ -69,3 +69,11 @@ func food_effect(health, mood, food_box):
 	print(Global.humor)
 	$VBoxContainer/FoodGrid.remove_child(food_box)
 	pass
+
+
+func _on_WindowDialog_popup_hide():
+	pass # Replace with function body.
+
+
+func _on_WindowDialog_about_to_show():
+	pass # Replace with function body.

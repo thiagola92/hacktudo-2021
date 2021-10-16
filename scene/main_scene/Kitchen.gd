@@ -15,9 +15,6 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func _on_fridge_gui_input(_event):
-	pass # Replace with function body.
-
 func _on_oven_gui_input(_event):
 	pass # Replace with function body.
 
