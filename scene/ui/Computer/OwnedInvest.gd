@@ -16,8 +16,8 @@ func reload():
 	clear()
 	add_Headers()
 	
-	for pos in range(0, Global.ownedStock.size()):
-		add_stock(Global.ownedStock[pos], pos)
+	for pos in range(0, GlobalStocks.ownedStock.size()):
+		add_stock(GlobalStocks.ownedStock[pos], pos)
 
 
 func clear():
