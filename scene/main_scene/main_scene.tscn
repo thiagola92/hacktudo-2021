@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/living-floor.png" type="Texture" id=1]
 [ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/living-wall.png" type="Texture" id=2]
@@ -8,11 +8,40 @@
 [ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/green-curtains.png" type="Texture" id=6]
 [ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/computer.png" type="Texture" id=7]
 [ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/bed.png" type="Texture" id=8]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/kitchen/individuals files/mirror.png" type="Texture" id=9]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/kitchen/individuals files/umbrella.png" type="Texture" id=10]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/board-post-it.png" type="Texture" id=11]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/bathroom/individuals files/shower-carpet.png" type="Texture" id=12]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/lamp.png" type="Texture" id=13]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/dresser-double.png" type="Texture" id=14]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/8Books.png" type="Texture" id=15]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/watch.png" type="Texture" id=16]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/sofa.png" type="Texture" id=17]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/vase_flowers.png" type="Texture" id=18]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/kitchen/individuals files/oven.png" type="Texture" id=19]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/kitchen/individuals files/orangeJuiceGang.png" type="Texture" id=20]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/kitchen/individuals files/stool1.png" type="Texture" id=21]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/bathroom/individuals files/dirty-landry.png" type="Texture" id=22]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/kitchen/individuals files/fridge.png" type="Texture" id=23]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/kitchen/individuals files/boxes.png" type="Texture" id=24]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/bathroom/individuals files/shower-mirror.png" type="Texture" id=25]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/kitchen/individuals files/utensils.png" type="Texture" id=26]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/kitchen/individuals files/sink.png" type="Texture" id=27]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/kitchen/individuals files/wall-kitchen.png" type="Texture" id=28]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/kitchen/individuals files/floor-kitchen.png" type="Texture" id=29]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/shelf-books.png" type="Texture" id=30]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/kitchen/individuals files/carpet.png" type="Texture" id=31]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/kitchen/individuals files/door.png" type="Texture" id=32]
+[ext_resource path="res://image/game/foods/LOAF.png" type="Texture" id=33]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/kitchen/individuals files/washing-machine.png" type="Texture" id=34]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/kitchen/individuals files/kitchen-drawer.png" type="Texture" id=35]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/kitchen/individuals files/jars.png" type="Texture" id=36]
+[ext_resource path="res://image/game/House_interior_by_Styl0o/kitchen/individuals files/kitchen-shelf.png" type="Texture" id=37]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="background" type="ColorRect" parent="."]
-margin_left = -522.0
+margin_left = -1581.0
 margin_top = 2.0
 margin_right = 1598.0
 margin_bottom = 600.0
@@ -44,40 +73,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="window" type="TextureRect" parent="."]
-margin_left = 1060.0
-margin_top = 111.0
-margin_right = 1234.0
-margin_bottom = 311.0
-texture = ExtResource( 3 )
+[node name="living_room" type="Node2D" parent="."]
+
+[node name="board" type="TextureRect" parent="living_room"]
+margin_left = 522.623
+margin_top = 146.603
+margin_right = 755.623
+margin_bottom = 295.603
+texture = ExtResource( 11 )
 stretch_mode = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="curtains_green" type="TextureRect" parent="."]
-margin_left = 1048.0
-margin_top = 110.0
-margin_right = 1242.0
-margin_bottom = 363.0
-texture = ExtResource( 6 )
-stretch_mode = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="bed" type="TextureRect" parent="."]
-margin_left = 1160.47
-margin_top = 223.352
-margin_right = 1585.47
-margin_bottom = 497.352
-texture = ExtResource( 8 )
-stretch_mode = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="table" type="TextureRect" parent="."]
+[node name="table" type="TextureRect" parent="living_room"]
 margin_left = 496.405
 margin_top = 330.936
 margin_right = 791.405
@@ -88,23 +97,396 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="computer" type="TextureRect" parent="."]
-margin_left = 571.0
-margin_top = 228.0
-margin_right = 719.0
-margin_bottom = 367.0
+[node name="computer" type="TextureRect" parent="living_room"]
+margin_left = 613.106
+margin_top = 233.171
+margin_right = 761.106
+margin_bottom = 372.171
 texture = ExtResource( 7 )
 stretch_mode = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="."]
-margin_left = 644.0
-margin_top = 316.0
-margin_right = 749.0
-margin_bottom = 496.0
+[node name="chair" type="TextureRect" parent="living_room"]
+margin_left = 669.116
+margin_top = 313.784
+margin_right = 774.116
+margin_bottom = 493.784
 texture = ExtResource( 4 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="flower_vase" type="TextureRect" parent="living_room"]
+margin_left = 546.636
+margin_top = 278.489
+margin_right = 605.636
+margin_bottom = 358.489
+texture = ExtResource( 18 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rug" type="TextureRect" parent="living_room"]
+margin_left = 165.468
+margin_top = 434.354
+margin_right = 460.468
+margin_bottom = 514.354
+texture = ExtResource( 12 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lamp" type="TextureRect" parent="living_room"]
+margin_left = 258.418
+margin_top = 183.739
+margin_right = 380.418
+margin_bottom = 458.739
+texture = ExtResource( 13 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="umbrella" type="TextureRect" parent="living_room"]
+margin_left = 87.905
+margin_top = 336.846
+margin_right = 142.905
+margin_bottom = 485.846
+texture = ExtResource( 10 )
+stretch_mode = 1
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="armchair" type="TextureRect" parent="living_room"]
+margin_left = 118.93
+margin_top = 262.238
+margin_right = 345.93
+margin_bottom = 498.238
+texture = ExtResource( 17 )
+stretch_mode = 1
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bedroom" type="Node2D" parent="."]
+
+[node name="window" type="TextureRect" parent="bedroom"]
+margin_left = 1060.0
+margin_top = 111.0
+margin_right = 1234.0
+margin_bottom = 311.0
+texture = ExtResource( 3 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="curtains_green" type="TextureRect" parent="bedroom"]
+margin_left = 1048.0
+margin_top = 110.0
+margin_right = 1242.0
+margin_bottom = 363.0
+texture = ExtResource( 6 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bed" type="TextureRect" parent="bedroom"]
+margin_left = 1160.47
+margin_top = 223.352
+margin_right = 1585.47
+margin_bottom = 497.352
+texture = ExtResource( 8 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mirror" type="TextureRect" parent="bedroom"]
+margin_left = 1299.0
+margin_top = 147.0
+margin_right = 1397.0
+margin_bottom = 285.0
+texture = ExtResource( 9 )
+stretch_mode = 1
+flip_h = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dresser" type="TextureRect" parent="bedroom"]
+margin_left = 875.045
+margin_top = 313.784
+margin_right = 1106.05
+margin_bottom = 471.784
+texture = ExtResource( 14 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="books" type="TextureRect" parent="bedroom"]
+margin_left = 952.387
+margin_top = 269.307
+margin_right = 1084.39
+margin_bottom = 332.307
+texture = ExtResource( 15 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="clock" type="TextureRect" parent="bedroom"]
+margin_left = 848.919
+margin_top = 139.719
+margin_right = 943.919
+margin_bottom = 229.719
+texture = ExtResource( 16 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="kitchen" type="Node2D" parent="."]
+
+[node name="wall" type="TextureRect" parent="kitchen"]
+margin_left = -1578.0
+margin_top = 77.0
+margin_right = -181.0
+margin_bottom = 430.0
+texture = ExtResource( 28 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="floor" type="TextureRect" parent="kitchen"]
+margin_left = -1644.0
+margin_top = 427.0
+margin_right = -113.0
+margin_bottom = 544.0
+texture = ExtResource( 29 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fridge" type="TextureRect" parent="kitchen"]
+margin_left = -625.623
+margin_top = 198.035
+margin_right = -464.623
+margin_bottom = 479.035
+texture = ExtResource( 23 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="oven" type="TextureRect" parent="kitchen"]
+margin_left = -771.126
+margin_top = 322.0
+margin_right = -614.126
+margin_bottom = 479.0
+texture = ExtResource( 19 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cabinet" type="TextureRect" parent="kitchen"]
+margin_left = -902.729
+margin_top = 321.774
+margin_right = -738.729
+margin_bottom = 478.774
+rect_pivot_offset = Vector2( -476.763, 38.9873 )
+texture = ExtResource( 35 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cabinet2" type="TextureRect" parent="kitchen"]
+margin_left = -1026.13
+margin_top = 322.214
+margin_right = -862.132
+margin_bottom = 479.214
+rect_pivot_offset = Vector2( -476.763, 38.9873 )
+texture = ExtResource( 35 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cabinet3" type="TextureRect" parent="kitchen"]
+margin_left = -1151.75
+margin_top = 320.7
+margin_right = -987.75
+margin_bottom = 477.7
+rect_pivot_offset = Vector2( -476.763, 38.9873 )
+texture = ExtResource( 35 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="window" type="TextureRect" parent="kitchen"]
+margin_left = -1014.71
+margin_top = 172.844
+margin_right = -800.713
+margin_bottom = 285.844
+texture = ExtResource( 25 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sink" type="TextureRect" parent="kitchen"]
+margin_left = -890.532
+margin_top = 320.774
+margin_right = -781.532
+margin_bottom = 345.774
+texture = ExtResource( 27 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="shelves" type="TextureRect" parent="kitchen"]
+margin_left = -456.899
+margin_top = 190.679
+margin_right = -262.899
+margin_bottom = 339.679
+texture = ExtResource( 37 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="stool" type="TextureRect" parent="kitchen"]
+margin_left = -408.869
+margin_top = 381.513
+margin_right = -308.869
+margin_bottom = 476.513
+texture = ExtResource( 21 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="boxes" type="TextureRect" parent="kitchen"]
+margin_left = -437.309
+margin_top = 212.745
+margin_right = -360.309
+margin_bottom = 248.745
+texture = ExtResource( 24 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="jars" type="TextureRect" parent="kitchen"]
+margin_left = -336.387
+margin_top = 262.0
+margin_right = -281.387
+margin_bottom = 292.0
+texture = ExtResource( 36 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="wall_appliances" type="TextureRect" parent="kitchen"]
+margin_left = -762.08
+margin_top = 222.648
+margin_right = -646.08
+margin_bottom = 292.648
+texture = ExtResource( 26 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="coffee" type="TextureRect" parent="kitchen"]
+margin_left = -995.0
+margin_top = 266.0
+margin_right = -912.0
+margin_bottom = 341.0
+texture = ExtResource( 20 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bread" type="TextureRect" parent="kitchen"]
+margin_left = -440.648
+margin_top = 306.648
+margin_right = -388.648
+margin_bottom = 334.648
+texture = ExtResource( 33 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="washing_machine" type="TextureRect" parent="kitchen"]
+margin_left = -1249.0
+margin_top = 322.0
+margin_right = -1122.0
+margin_bottom = 473.0
+texture = ExtResource( 34 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dirt_laundry" type="TextureRect" parent="kitchen"]
+margin_left = -1227.3
+margin_top = 269.874
+margin_right = -1139.3
+margin_bottom = 341.874
+texture = ExtResource( 22 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="door" type="TextureRect" parent="kitchen"]
+margin_left = -1489.13
+margin_top = 129.568
+margin_right = -1305.13
+margin_bottom = 426.568
+texture = ExtResource( 32 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="carpet" type="TextureRect" parent="."]
+margin_left = -251.191
+margin_top = 425.0
+margin_right = -36.1908
+margin_bottom = 517.0
+texture = ExtResource( 31 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bookcase" type="TextureRect" parent="."]
+margin_left = -253.0
+margin_top = 149.568
+margin_right = -61.0
+margin_bottom = 455.568
+texture = ExtResource( 30 )
 stretch_mode = 1
 __meta__ = {
 "_edit_use_anchors_": false
