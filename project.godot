@@ -17,6 +17,7 @@ config/icon="res://icon.png"
 [autoload]
 
 GlobalTest="*res://scene/test/global_teste.gd"
+Global="*res://scene/global.gd"
 
 [display]
 
