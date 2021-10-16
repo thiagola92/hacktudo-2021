@@ -14,8 +14,6 @@ func _ready():
 	add_ownedStock('yyy', 67890.00, 78901.00, 77901.00, 'Tecnológico', 'Tesouro Direto')
 	add_ownedStock('zzz', 100.00, 20.00, 20.00, 'Oléo & Gás', 'Ação')
 	
-	calc_stocks()
-
 
 func add_newStock(_name, index, variation, risk, cluster, _type):
 	newStock.append({
@@ -52,10 +50,6 @@ func calc_balance(balance, stock_variation):
 
 
 func calc_stocks ():
-	print('aaaa')
-	print(newStock)
-	print(ownedStock)
-	
 	var indexesNews = [
 		{'cluster': GlobalNews.newsOfTheDay[0]['cluster'], 'index': GlobalNews.newsOfTheDay[0]['variation']},
 		{'cluster': GlobalNews.newsOfTheDay[1]['cluster'], 'index': GlobalNews.newsOfTheDay[1]['variation']},
@@ -87,6 +81,3 @@ func calc_stocks ():
 				stock['current_stock'] = calc_current_stock(stock['current_stock'], indexes[pos])
 				stock['balance'] = calc_balance(stock['balance'], indexes[pos])
 				stock['variation'] = calc_variation(stock['initial_stock'], stock['current_stock'])
-		
-	print(newStock)
-	print(ownedStock)
