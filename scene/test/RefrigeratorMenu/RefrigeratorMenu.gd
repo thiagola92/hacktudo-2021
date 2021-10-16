@@ -46,7 +46,26 @@ func add_food(spr, name, health_effect, mood_effect, price):
 	texture.rect_min_size.x = 50
 	texture.rect_min_size.y = 50
 	
+	button.connect("pressed", self, "food_effect", [health_effect, mood_effect, vbox])
+#	Global.health = 50
+#	Global.humor = 50
 	vbox.add_child(texture)
 	vbox.add_child(button)
 	$VBoxContainer/FoodGrid.add_child(vbox)
 	
+func food_effect(health, mood, food_box):
+	
+	Global.health += int(health)
+	if Global.health >= 100:
+		Global.health = 100
+	if Global.health <= 0:
+		Global.health = 0
+	Global.humor += int(mood)
+	if Global.humor >= 100:
+		Global.humor = 100
+	if Global.humor <= 0:
+		Global.humor = 0
+	print(Global.health)
+	print(Global.humor)
+	$VBoxContainer/FoodGrid.remove_child(food_box)
+	pass
