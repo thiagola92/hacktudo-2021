@@ -4,6 +4,7 @@ var daysWithoutWork = 0
 var workedToday = false
 var changedJobs = false;
 
+var allJobs = []
 var disponibleJobs = []
 var currentJob
 
@@ -11,6 +12,8 @@ func _process(delta):
 	verify_job()
 
 func _ready():
+	randomize()
+
 	add_job('Trabalho #1', '8:00', -30, -20, 100, 3)
 	add_job('Trabalho #2', '6:00', -20, -10, 80, 3)
 	add_job('Trabalho #3', '6:00', -30, -20, 100, 1)
@@ -26,9 +29,11 @@ func _ready():
 		'pay': 100,
 		'daysUntilFired': 3
 	}
+	
+	pick_tree()
 
 func add_job (name, time, humor, health, pay, daysUntilFired):
-	disponibleJobs.append({
+	allJobs.append({
 		'name': name,
 		'time': time,
 		'humor': humor,
@@ -44,7 +49,16 @@ func resetDay():
 		daysWithoutWork += 1
 	
 	workedToday = false
+	pick_tree()
+	
+func resetJobBlock ():
+	changedJobs = false;
 	
 func verify_job ():
 	if currentJob['daysUntilFired'] <= daysWithoutWork:
 		currentJob = null
+
+func pick_tree ():
+	disponibleJobs.clear()
+	disponibleJobs.append(allJobs[randi()%6])
+	disponibleJobs.append(allJobs[randi()%6])
