@@ -63,6 +63,7 @@ func passDay ():
 		money -= amountCharged
 		daysPassed = 1
 		amountCharged = amountCharged * 1.5
+		GlobalJobs.resetJobBlock()
 	
 	if (money < 0): # game over
 		pass
