@@ -6,7 +6,7 @@ var newsOfTheDay = []
 
 func _ready():
 	randomize()
-	
+
 	add_news('Notícia 1', 'Lorem Ipsum', 'Financeiro', -0.5)
 	add_news('Notícia 2', 'Lorem Ipsum', 'Financeiro', 0.5)
 	add_news('Notícia 3', 'Lorem Ipsum', 'Tecnológico', -0.2)

@@ -8,7 +8,7 @@ var health = 100
 var humor = 100
 
 func _ready():
-	pass	
+	pass
 
 func verifyHour (currentTime, hourSpent):
 	var currentHour = currentTime[0]
