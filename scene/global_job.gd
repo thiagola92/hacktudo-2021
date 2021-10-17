@@ -51,6 +51,14 @@ func resetDay():
 	workedToday = false
 	pick_tree()
 	
+func work():
+	Global.health += currentJob['health']
+	Global.humor += currentJob['humor']
+	Global.money += currentJob['pay']
+	var time = currentJob['time'].split(":")
+	Global.passTime(int(time[0]), int(time[1]))
+	workedToday = true
+	
 func resetJobBlock ():
 	changedJobs = false;
 

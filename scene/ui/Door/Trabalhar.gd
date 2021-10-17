@@ -49,3 +49,7 @@ func unset_job():
 	$Description.hide()
 	$StartWork.disabled = true
 	
+
+
+func _on_StartWork_pressed():
+	GlobalJobs.work()
