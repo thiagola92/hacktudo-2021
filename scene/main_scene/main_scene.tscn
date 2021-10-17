@@ -624,7 +624,8 @@ position = Vector2( 1108.78, 499.729 )
 scale = Vector2( 6.95575, 6.76008 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 2
+frame = 6
+playing = true
 offset = Vector2( 0, -42 )
 script = ExtResource( 43 )
 
@@ -633,6 +634,8 @@ position = Vector2( -1398.75, 503.075 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 3 )
 animation = "bark"
+frame = 3
+playing = true
 offset = Vector2( 0, -12 )
 script = ExtResource( 59 )
 
