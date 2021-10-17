@@ -11,24 +11,9 @@ func _ready():
 	# For test purpose only
 	if $"." in get_tree().get_root().get_children():
 		popup_centered()
-	add_food("res://image/game/foods/DISH2.png", "Bolo", "-1", "+5", 3.80)
-	add_food("res://image/game/foods/DISH2.png", "Bolo", "-1", "+5", 3.80)
-	add_food("res://image/game/foods/DISH2.png", "Bolo", "-1", "+5", 3.80)
-	add_food("res://image/game/foods/DISH2.png", "Bolo", "-1", "+5", 3.80)
-	add_food("res://image/game/foods/DISH2.png", "Bolo", "-1", "+5", 3.80)
-	add_food("res://image/game/foods/DISH2.png", "Bolo", "-1", "+5", 3.80)
-	add_food("res://image/game/foods/DISH2.png", "Bolo", "-1", "+5", 3.80)
-	add_food("res://image/game/foods/DISH2.png", "Bolo", "-1", "+5", 3.80)
-	add_food("res://image/game/foods/DISH2.png", "Bolo", "-1", "+5", 3.80)
-	add_food("res://image/game/foods/DISH2.png", "Bolo", "-1", "+5", 3.80)
-	add_food("res://image/game/foods/DISH2.png", "Bolo", "-1", "+5", 3.80)
-	add_food("res://image/game/foods/DISH2.png", "Bolo", "-1", "+5", 3.80)
-	add_food("res://image/game/foods/DISH2.png", "Bolo", "-1", "+5", 3.80)
-	add_food("res://image/game/foods/DISH2.png", "Bolo", "-1", "+5", 3.80)
-	add_food("res://image/game/foods/DISH2.png", "Bolo", "-1", "+5", 3.80)
-	add_food("res://image/game/foods/DISH2.png", "Bolo", "-1", "+5", 3.80)
-	add_food("res://image/game/foods/DISH2.png", "Bolo", "-1", "+5", 3.80)
-	add_food("res://image/game/foods/DISH2.png", "Bolo", "-1", "+5", 3.80)
+
+	for food in GlobalFood.ownedFoods:
+		add_food(food['sprite'], food['name'], str(food['health']), str(food['humor']), food['price'])
 
 
 func add_food(spr, name, health_effect, mood_effect, price):
