@@ -16,11 +16,11 @@ func _process(_delta):
 		$Camera2D.position.x = $Player.position.x
 
 func _input(_event): 
+	if Input.is_action_just_pressed("ui_cancel") and not busyPopup:
+		return $Camera2D/HUD/Canvas/PauseMenu.pause()
+		
 	if !Input.is_action_just_pressed("ui_left_click") || busyPopup:
 		return
-	
-	if Input.is_action_just_pressed("ui_cancel") and !busyPopup:
-		return $PauseMenu.pause()
 	
 	var new_path = nav2D.get_simple_path(Player.get_global_position(), get_global_mouse_position())
 	

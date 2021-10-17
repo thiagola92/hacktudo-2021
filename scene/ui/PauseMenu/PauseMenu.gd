@@ -1,14 +1,20 @@
 extends ColorRect
 
 
+var process_next_cancel = false
+
+
 func _ready():
-	pass
-
-
-func _on_Resume_pressed():
-	get_tree().paused = false
 	hide()
 
 
 func pause():
+	show()
+	
 	get_tree().paused = true
+
+
+func resume():
+	hide()
+	
+	get_tree().paused = false
