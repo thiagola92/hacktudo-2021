@@ -51,4 +51,7 @@ func passTime (hourSpent, minuteSpent):
 	
 func passDay ():
 	Global.currentDay += 1
+	GlobalNews.pick_two()
+	GlobalStocks.calc_stocks()
+	GlobalJobs.resetDay()
 		

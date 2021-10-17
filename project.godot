@@ -16,9 +16,10 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Global="*res://scene/global.gd"
-GlobalStocks="*res://scene/global_stocks.gd"
 GlobalNews="*res://scene/global_news.gd"
+GlobalStocks="*res://scene/global_stocks.gd"
+Global="*res://scene/global.gd"
+GlobalJobs="*res://scene/global_job.gd"
 
 [display]
 
