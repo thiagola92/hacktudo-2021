@@ -23,12 +23,12 @@ func _ready():
 func _on_HSlider_value_changed(value):
 	$VBoxContainer/VBoxContainer/NumberTime.text = str(value)
 
-	if last_value > value:
-		health -= value * 10
-		mood -= value * 5
+	if last_value >= value:
+		health += (last_value-value) * -5
+		mood += (last_value-value) * -10
 	elif last_value <= value:
-		health += value * 10
-		mood += value * 5
+		health -= (value-last_value) * -5
+		mood -= (value-last_value) * -10
 	
 	$VBoxContainer/ResultView/MoodContainer/Mood.text = str(mood)
 	$VBoxContainer/ResultView/HealthContainer/Health.text = str(health)

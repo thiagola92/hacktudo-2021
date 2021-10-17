@@ -99,6 +99,11 @@ outlines = [ PoolVector2Array( 1562.19, 497.353, 1567.04, 537.102, -1514.56, 542
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "interact",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 42 ), ExtResource( 41 ), ExtResource( 44 ), ExtResource( 40 ), ExtResource( 45 ), ExtResource( 38 ), ExtResource( 39 ) ],
 "loop": true,
 "name": "idle",
@@ -108,24 +113,19 @@ animations = [ {
 "loop": true,
 "name": "run",
 "speed": 5.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "interact",
-"speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ ExtResource( 61 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ) ],
-"loop": true,
-"name": "idle",
-"speed": 12.0
-}, {
 "frames": [ ExtResource( 55 ), ExtResource( 62 ), ExtResource( 60 ), ExtResource( 69 ) ],
 "loop": true,
 "name": "bark",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 61 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ) ],
+"loop": true,
+"name": "idle",
+"speed": 12.0
 }, {
 "frames": [ ExtResource( 64 ), ExtResource( 63 ), ExtResource( 68 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ) ],
 "loop": true,
@@ -696,7 +696,6 @@ position = Vector2( -1398.75, 503.075 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 4 )
 animation = "bark"
-frame = 1
 playing = true
 offset = Vector2( 0, -12 )
 script = ExtResource( 59 )
@@ -812,7 +811,6 @@ margin_right = -233.139
 margin_bottom = 158.354
 
 [node name="RefrigeratorWindow" parent="Camera2D/HUD/Canvas" instance=ExtResource( 82 )]
-visible = false
 margin_left = -895.047
 margin_top = -233.359
 margin_right = -239.047
