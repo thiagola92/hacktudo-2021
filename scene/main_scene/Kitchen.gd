@@ -59,6 +59,3 @@ func _on_washing_machine_gui_input(_event):
 
 func _on_dirt_laundry_gui_input(_event):
 	pass # Replace with function body.
-
-func _on_door_gui_input(_event):
-	pass # Replace with function body.

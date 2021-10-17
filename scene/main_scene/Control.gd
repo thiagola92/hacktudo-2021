@@ -66,3 +66,11 @@ func _on_Timer_timeout():
 	
 	Dog.path = new_path
 	Dog.change_state(MOVE)
+
+
+func _on_Door_popup_hide():
+	busyPopup = false
+
+
+func _on_Door_about_to_show():
+	busyPopup = true

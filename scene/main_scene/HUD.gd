@@ -32,3 +32,8 @@ func _on_WindowDialog_about_to_show():
 
 func _on_RefrigeratorWindow_about_to_show():
 	pass # Replace with function body.
+
+
+func _on_door_gui_input(event):
+	if Input.is_action_just_pressed("ui_left_click"):
+		$Canvas/Door.popup_centered()

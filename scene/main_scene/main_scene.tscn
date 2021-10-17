@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=2]
+[gd_scene load_steps=95 format=2]
 
 [ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/living-floor.png" type="Texture" id=1]
 [ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/living-wall.png" type="Texture" id=2]
@@ -83,6 +83,7 @@
 [ext_resource path="res://scene/ui/Computer/Computer.tscn" type="PackedScene" id=81]
 [ext_resource path="res://scene/ui/RefrigeratorMenu/RefrigeratorMenu.tscn" type="PackedScene" id=82]
 [ext_resource path="res://scene/ui/PauseMenu/PauseMenu.tscn" type="PackedScene" id=83]
+[ext_resource path="res://scene/ui/Door/Door.tscn" type="PackedScene" id=84]
 
 [sub_resource type="NavigationPolygon" id=1]
 resource_local_to_scene = true
@@ -92,6 +93,11 @@ outlines = [ PoolVector2Array( 1562.19, 497.353, 1567.04, 537.102, -1514.56, 542
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
+"frames": [ ExtResource( 42 ), ExtResource( 41 ), ExtResource( 44 ), ExtResource( 40 ), ExtResource( 45 ), ExtResource( 38 ), ExtResource( 39 ) ],
+"loop": true,
+"name": "idle",
+"speed": 12.0
+}, {
 "frames": [  ],
 "loop": true,
 "name": "interact",
@@ -101,29 +107,24 @@ animations = [ {
 "loop": true,
 "name": "run",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 42 ), ExtResource( 41 ), ExtResource( 44 ), ExtResource( 40 ), ExtResource( 45 ), ExtResource( 38 ), ExtResource( 39 ) ],
-"loop": true,
-"name": "idle",
-"speed": 12.0
 } ]
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 55 ), ExtResource( 62 ), ExtResource( 60 ), ExtResource( 69 ) ],
+"frames": [ ExtResource( 61 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ) ],
 "loop": true,
-"name": "bark",
-"speed": 5.0
+"name": "idle",
+"speed": 12.0
 }, {
 "frames": [ ExtResource( 64 ), ExtResource( 63 ), ExtResource( 68 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ) ],
 "loop": true,
 "name": "run",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 61 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ) ],
+"frames": [ ExtResource( 55 ), ExtResource( 62 ), ExtResource( 60 ), ExtResource( 69 ) ],
 "loop": true,
-"name": "idle",
-"speed": 12.0
+"name": "bark",
+"speed": 5.0
 } ]
 
 [sub_resource type="DynamicFont" id=4]
@@ -624,7 +625,7 @@ position = Vector2( 1108.78, 499.729 )
 scale = Vector2( 6.95575, 6.76008 )
 frames = SubResource( 2 )
 animation = "idle"
-frame = 6
+frame = 3
 playing = true
 offset = Vector2( 0, -42 )
 script = ExtResource( 43 )
@@ -756,6 +757,8 @@ margin_top = -233.359
 margin_right = -239.047
 margin_bottom = 168.641
 
+[node name="Door" parent="Camera2D/HUD/Canvas" instance=ExtResource( 84 )]
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
 autostart = true
@@ -791,10 +794,12 @@ autostart = true
 [connection signal="gui_input" from="Scene/kitchen/bread" to="Scene/kitchen" method="_on_bread_gui_input"]
 [connection signal="gui_input" from="Scene/kitchen/washing_machine" to="Scene/kitchen" method="_on_washing_machine_gui_input"]
 [connection signal="gui_input" from="Scene/kitchen/dirt_laundry" to="Scene/kitchen" method="_on_dirt_laundry_gui_input"]
-[connection signal="gui_input" from="Scene/kitchen/door" to="Scene/kitchen" method="_on_door_gui_input"]
+[connection signal="gui_input" from="Scene/kitchen/door" to="Camera2D/HUD" method="_on_door_gui_input"]
 [connection signal="gui_input" from="Scene/bookcase" to="." method="_on_bookcase_gui_input"]
 [connection signal="about_to_show" from="Camera2D/HUD/Canvas/Window" to="." method="_on_Window_about_to_show"]
 [connection signal="popup_hide" from="Camera2D/HUD/Canvas/Window" to="." method="_on_Window_popup_hide"]
 [connection signal="about_to_show" from="Camera2D/HUD/Canvas/RefrigeratorWindow" to="." method="_on_RefrigeratorWindow_about_to_show"]
 [connection signal="popup_hide" from="Camera2D/HUD/Canvas/RefrigeratorWindow" to="." method="_on_RefrigeratorWindow_popup_hide"]
+[connection signal="about_to_show" from="Camera2D/HUD/Canvas/Door" to="." method="_on_Door_about_to_show"]
+[connection signal="popup_hide" from="Camera2D/HUD/Canvas/Door" to="." method="_on_Door_popup_hide"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
