@@ -1,16 +1,65 @@
 extends AnimatedSprite
 
+var destination = Vector2()
+var distance = Vector2()
+var velocity = Vector2()
+var snapPosition = Vector2()
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var path : PoolVector2Array
 
+export var speed = 200
 
-# Called when the node enters the scene tree for the first time.
+enum{IDLE, MOVE, BARK}
+
+var state = IDLE
+
+var margin = 1
+
 func _ready():
-	pass # Replace with function body.
+	destination = position
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	var move_distance = speed * delta 
+	
+	match state:
+		IDLE:
+			pass
+		MOVE:
+			move_along_path(move_distance)
+		BARK:
+			pass
+	pass
+	
+func move_along_path(distance):
+	var starting_point : = position 
+	
+	if(starting_point.x < path[0].x):
+		self.set_flip_h( false )
+	if(starting_point.x > path[0].x):
+		self.set_flip_h( true )	
+	
+	for _i in range(path.size()):
+		var distance_to_next : = starting_point.distance_to(path[0])
+		
+		if (distance <= distance_to_next):
+			position = starting_point.linear_interpolate(path[0], distance / distance_to_next) 
+			break
+		
+		path.remove(0)
+		
+		if(path.size() == 0):
+			if (int(rand_range(1,10)) % 2 == 0):
+				change_state(IDLE)
+			else:
+				change_state(BARK)
+	pass
+	
+func change_state(newState):
+	state = newState
+	match state: 
+		IDLE:
+			self.play("idle")
+		MOVE:
+			self.play("run")
+		BARK:
+			self.play("bark")

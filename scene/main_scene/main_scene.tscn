@@ -92,11 +92,6 @@ outlines = [ PoolVector2Array( 1562.19, 497.353, 1567.04, 537.102, -1514.56, 542
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 42 ), ExtResource( 41 ), ExtResource( 44 ), ExtResource( 40 ), ExtResource( 45 ), ExtResource( 38 ), ExtResource( 39 ) ],
-"loop": true,
-"name": "idle",
-"speed": 12.0
-}, {
 "frames": [  ],
 "loop": true,
 "name": "interact",
@@ -106,24 +101,29 @@ animations = [ {
 "loop": true,
 "name": "run",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 42 ), ExtResource( 41 ), ExtResource( 44 ), ExtResource( 40 ), ExtResource( 45 ), ExtResource( 38 ), ExtResource( 39 ) ],
+"loop": true,
+"name": "idle",
+"speed": 12.0
 } ]
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 61 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ) ],
+"frames": [ ExtResource( 55 ), ExtResource( 62 ), ExtResource( 60 ), ExtResource( 69 ) ],
 "loop": true,
-"name": "idle",
-"speed": 12.0
+"name": "bark",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 64 ), ExtResource( 63 ), ExtResource( 68 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ) ],
 "loop": true,
 "name": "run",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 55 ), ExtResource( 62 ), ExtResource( 60 ), ExtResource( 69 ) ],
+"frames": [ ExtResource( 61 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ) ],
 "loop": true,
-"name": "bark",
-"speed": 5.0
+"name": "idle",
+"speed": 12.0
 } ]
 
 [sub_resource type="DynamicFont" id=4]
@@ -753,6 +753,10 @@ margin_top = -233.359
 margin_right = -239.047
 margin_bottom = 168.641
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
 [connection signal="gui_input" from="Scene/living_room/board" to="Scene/living_room" method="_on_board_gui_input"]
 [connection signal="gui_input" from="Scene/living_room/table" to="Scene/living_room" method="_on_table_gui_input"]
 [connection signal="gui_input" from="Scene/living_room/computer" to="Camera2D/HUD" method="_on_computer_gui_input"]
@@ -790,3 +794,4 @@ margin_bottom = 168.641
 [connection signal="popup_hide" from="Camera2D/HUD/Canvas/Window" to="." method="_on_Window_popup_hide"]
 [connection signal="about_to_show" from="Camera2D/HUD/Canvas/RefrigeratorWindow" to="." method="_on_RefrigeratorWindow_about_to_show"]
 [connection signal="popup_hide" from="Camera2D/HUD/Canvas/RefrigeratorWindow" to="." method="_on_RefrigeratorWindow_popup_hide"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
