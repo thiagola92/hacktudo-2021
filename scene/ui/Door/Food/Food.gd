@@ -1,9 +1,6 @@
 extends VBoxContainer
 
 
-signal food_bought(food, qty)
-
-
 const base_text = "x %s"
 var food : Dictionary
 var qty = 1
@@ -20,7 +17,13 @@ func set_food(f : Dictionary):
 
 
 func _on_Buy_pressed():
-	emit_signal("food_bought", food, qty)
+	if qty * food['price'] > Global.money:
+		return
+	
+	for i in range(0, qty):
+		GlobalFood.add_ownedFoodDict(food)
+		
+	Global.money -= qty * food['price']
 
 
 func _on_Up_pressed():
