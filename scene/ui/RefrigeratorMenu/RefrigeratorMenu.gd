@@ -12,6 +12,7 @@ func _ready():
 	if $"." in get_tree().get_root().get_children():
 		popup_centered()
 
+func _draw():
 	for food in GlobalFood.ownedFoods:
 		add_food(food['sprite'], food['name'], str(food['health']), str(food['humor']), food['price'])
 
@@ -36,7 +37,7 @@ func add_food(spr, name, health_effect, mood_effect, price):
 #	Global.humor = 50
 	vbox.add_child(texture)
 	vbox.add_child(button)
-	$VBoxContainer/FoodGrid.add_child(vbox)
+	$ScrollContainer/VBoxContainer/FoodGrid.add_child(vbox)
 	
 func food_effect(health, mood, food_box):
 	
@@ -52,7 +53,7 @@ func food_effect(health, mood, food_box):
 		Global.humor = 0
 	print(Global.health)
 	print(Global.humor)
-	$VBoxContainer/FoodGrid.remove_child(food_box)
+	$ScrollContainer/VBoxContainer/FoodGrid.remove_child(food_box)
 	pass
 
 
