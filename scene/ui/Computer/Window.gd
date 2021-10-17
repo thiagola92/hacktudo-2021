@@ -8,5 +8,5 @@ func _ready():
 
 
 func _on_Window_draw():
-	$Tabs/Investir/ScrollContainer/HBoxContainer/NewInvest.reload()
-	$Tabs/Investir/ScrollContainer/HBoxContainer/OwnedInvest.reload()
+	$Tabs/Investir/ScrollContainer/VBoxContainer/NewInvest.reload()
+	$Tabs/Investir/ScrollContainer/VBoxContainer/OwnedInvest.reload()

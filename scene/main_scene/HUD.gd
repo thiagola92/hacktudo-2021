@@ -43,3 +43,7 @@ func _on_armchair_gui_input(event):
 	if Input.is_action_just_pressed("ui_left_click"):
 		$Canvas/Armchair.popup_centered()
 
+func _on_door_gui_input(event):
+	if Input.is_action_just_pressed("ui_left_click"):
+		$Canvas/Door.popup_centered()
+

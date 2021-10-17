@@ -50,3 +50,6 @@ func add_ownedFood(name, humor, health, cooking_time, price, sprite):
 		'sprite': sprite
 	})	
 
+func add_ownedFoodDict(food):
+	ownedFoods.append(food)	
+
