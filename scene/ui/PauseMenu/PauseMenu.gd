@@ -10,5 +10,5 @@ func _on_Resume_pressed():
 	hide()
 
 
-func _on_PauseMenu_draw():
+func pause():
 	get_tree().paused = true
