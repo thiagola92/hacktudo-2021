@@ -50,8 +50,6 @@ func food_effect(health, mood, food_box):
 		Global.humor = 100
 	if Global.humor <= 0:
 		Global.humor = 0
-	print(Global.health)
-	print(Global.humor)
 	$VBoxContainer/FoodGrid.remove_child(food_box)
 	pass
 

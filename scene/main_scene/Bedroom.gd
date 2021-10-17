@@ -30,9 +30,6 @@ func _on_dresser_gui_input(_event):
 func _on_mirror_gui_input(_event):
 	pass # Replace with function body.
 
-func _on_bed_gui_input(_event):
-	pass # Replace with function body.
-
 func _on_curtains_green_gui_input(_event):
 	pass # Replace with function body.
 

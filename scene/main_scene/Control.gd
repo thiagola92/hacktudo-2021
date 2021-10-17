@@ -51,3 +51,17 @@ func _on_RefrigeratorWindow_about_to_show():
 
 func _on_RefrigeratorWindow_popup_hide():
 	busyPopup = false
+
+
+func _on_Bed_about_to_show():
+	busyPopup = true
+
+
+func _on_Bed_popup_hide():
+	busyPopup = false
+
+func _on_Armchair_about_to_show():
+	busyPopup = true
+
+func _on_Armchair_popup_hide():
+	busyPopup = false

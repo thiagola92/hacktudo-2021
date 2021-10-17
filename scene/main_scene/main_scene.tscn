@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=2]
+[gd_scene load_steps=96 format=2]
 
 [ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/living-floor.png" type="Texture" id=1]
 [ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/living-wall.png" type="Texture" id=2]
@@ -83,6 +83,8 @@
 [ext_resource path="res://scene/ui/Computer/Computer.tscn" type="PackedScene" id=81]
 [ext_resource path="res://scene/ui/RefrigeratorMenu/RefrigeratorMenu.tscn" type="PackedScene" id=82]
 [ext_resource path="res://scene/ui/PauseMenu/PauseMenu.tscn" type="PackedScene" id=83]
+[ext_resource path="res://scene/ui/BedMenu/BedMenu.tscn" type="PackedScene" id=84]
+[ext_resource path="res://scene/ui/ArmchairMenu/ArmchairMenu.tscn" type="PackedScene" id=85]
 
 [sub_resource type="NavigationPolygon" id=1]
 resource_local_to_scene = true
@@ -92,15 +94,15 @@ outlines = [ PoolVector2Array( 1562.19, 497.353, 1567.04, 537.102, -1514.56, 542
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 42 ), ExtResource( 41 ), ExtResource( 44 ), ExtResource( 40 ), ExtResource( 45 ), ExtResource( 38 ), ExtResource( 39 ) ],
-"loop": true,
-"name": "idle",
-"speed": 12.0
-}, {
 "frames": [  ],
 "loop": true,
 "name": "interact",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 42 ), ExtResource( 41 ), ExtResource( 44 ), ExtResource( 40 ), ExtResource( 45 ), ExtResource( 38 ), ExtResource( 39 ) ],
+"loop": true,
+"name": "idle",
+"speed": 12.0
 }, {
 "frames": [ ExtResource( 54 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 50 ), ExtResource( 52 ), ExtResource( 51 ), ExtResource( 49 ), ExtResource( 53 ) ],
 "loop": true,
@@ -110,6 +112,11 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
+"frames": [ ExtResource( 55 ), ExtResource( 62 ), ExtResource( 60 ), ExtResource( 69 ) ],
+"loop": true,
+"name": "bark",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 61 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ) ],
 "loop": true,
 "name": "idle",
@@ -118,11 +125,6 @@ animations = [ {
 "frames": [ ExtResource( 64 ), ExtResource( 63 ), ExtResource( 68 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ) ],
 "loop": true,
 "name": "run",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 55 ), ExtResource( 62 ), ExtResource( 60 ), ExtResource( 69 ) ],
-"loop": true,
-"name": "bark",
 "speed": 5.0
 } ]
 
@@ -160,10 +162,10 @@ __meta__ = {
 [node name="Scene" type="Node2D" parent="."]
 
 [node name="background" type="ColorRect" parent="Scene"]
-margin_left = -1581.0
-margin_top = 2.0
-margin_right = 1633.0
-margin_bottom = 600.0
+margin_left = -1582.0
+margin_top = -28.0
+margin_right = 1632.0
+margin_bottom = 613.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -753,6 +755,11 @@ margin_top = -233.359
 margin_right = -239.047
 margin_bottom = 168.641
 
+[node name="Bed" parent="Camera2D/HUD/Canvas" instance=ExtResource( 84 )]
+visible = true
+
+[node name="Armchair" parent="Camera2D/HUD/Canvas" instance=ExtResource( 85 )]
+
 [connection signal="gui_input" from="Scene/living_room/board" to="Scene/living_room" method="_on_board_gui_input"]
 [connection signal="gui_input" from="Scene/living_room/table" to="Scene/living_room" method="_on_table_gui_input"]
 [connection signal="gui_input" from="Scene/living_room/computer" to="Camera2D/HUD" method="_on_computer_gui_input"]
@@ -760,10 +767,10 @@ margin_bottom = 168.641
 [connection signal="gui_input" from="Scene/living_room/flower_vase" to="Scene/living_room" method="_on_flower_vase_gui_input"]
 [connection signal="gui_input" from="Scene/living_room/lamp" to="Scene/living_room" method="_on_lamp_gui_input"]
 [connection signal="gui_input" from="Scene/living_room/umbrella" to="Scene/living_room" method="_on_umbrella_gui_input"]
-[connection signal="gui_input" from="Scene/living_room/armchair" to="Scene/living_room" method="_on_armchair_gui_input"]
+[connection signal="gui_input" from="Scene/living_room/armchair" to="Camera2D/HUD" method="_on_armchair_gui_input"]
 [connection signal="gui_input" from="Scene/bedroom/window" to="Scene/bedroom" method="_on_window_gui_input"]
 [connection signal="gui_input" from="Scene/bedroom/curtains_green" to="Scene/bedroom" method="_on_curtains_green_gui_input"]
-[connection signal="gui_input" from="Scene/bedroom/bed" to="Scene/bedroom" method="_on_bed_gui_input"]
+[connection signal="gui_input" from="Scene/bedroom/bed" to="Camera2D/HUD" method="_on_bed_gui_input"]
 [connection signal="gui_input" from="Scene/bedroom/mirror" to="Scene/bedroom" method="_on_mirror_gui_input"]
 [connection signal="gui_input" from="Scene/bedroom/dresser" to="Scene/bedroom" method="_on_dresser_gui_input"]
 [connection signal="gui_input" from="Scene/bedroom/books" to="Scene/bedroom" method="_on_books_gui_input"]
@@ -790,3 +797,9 @@ margin_bottom = 168.641
 [connection signal="popup_hide" from="Camera2D/HUD/Canvas/Window" to="." method="_on_Window_popup_hide"]
 [connection signal="about_to_show" from="Camera2D/HUD/Canvas/RefrigeratorWindow" to="." method="_on_RefrigeratorWindow_about_to_show"]
 [connection signal="popup_hide" from="Camera2D/HUD/Canvas/RefrigeratorWindow" to="." method="_on_RefrigeratorWindow_popup_hide"]
+[connection signal="about_to_show" from="Camera2D/HUD/Canvas/Bed" to="." method="_on_Bed_about_to_show"]
+[connection signal="gui_input" from="Camera2D/HUD/Canvas/Bed" to="Camera2D/HUD" method="_on_WindowDialog_gui_input"]
+[connection signal="popup_hide" from="Camera2D/HUD/Canvas/Bed" to="." method="_on_Bed_popup_hide"]
+[connection signal="about_to_show" from="Camera2D/HUD/Canvas/Armchair" to="." method="_on_Armchair_about_to_show"]
+[connection signal="gui_input" from="Camera2D/HUD/Canvas/Armchair" to="Camera2D/HUD" method="_on_Armchair_gui_input"]
+[connection signal="popup_hide" from="Camera2D/HUD/Canvas/Armchair" to="." method="_on_Armchair_popup_hide"]
