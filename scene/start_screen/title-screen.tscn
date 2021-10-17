@@ -1,12 +1,30 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://font/hf-free-complete/equipment-pro-v1.1/EquipmentPro.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://scene/start_screen/Exit.gd" type="Script" id=2]
 [ext_resource path="res://scene/start_screen/Rules.gd" type="Script" id=3]
 [ext_resource path="res://scene/start_screen/Play.gd" type="Script" id=4]
+[ext_resource path="res://image/game/coin/frame_04_delay-0.05s.png" type="Texture" id=5]
+[ext_resource path="res://image/game/coin/frame_14_delay-0.05s.png" type="Texture" id=6]
+[ext_resource path="res://image/game/coin/frame_15_delay-0.05s.png" type="Texture" id=7]
+[ext_resource path="res://image/game/coin/frame_10_delay-0.05s.png" type="Texture" id=8]
+[ext_resource path="res://image/game/coin/frame_05_delay-0.05s.png" type="Texture" id=9]
+[ext_resource path="res://image/game/coin/frame_00_delay-0.35s.png" type="Texture" id=10]
+[ext_resource path="res://image/game/coin/frame_06_delay-0.55s.png" type="Texture" id=11]
+[ext_resource path="res://image/game/coin/frame_01_delay-0.05s.png" type="Texture" id=12]
+[ext_resource path="res://image/game/coin/frame_17_delay-0.05s.png" type="Texture" id=13]
+[ext_resource path="res://image/game/coin/frame_13_delay-0.05s.png" type="Texture" id=14]
+[ext_resource path="res://image/game/coin/frame_16_delay-0.05s.png" type="Texture" id=15]
+[ext_resource path="res://image/game/coin/frame_09_delay-0.05s.png" type="Texture" id=16]
+[ext_resource path="res://image/game/coin/frame_02_delay-0.05s.png" type="Texture" id=17]
+[ext_resource path="res://image/game/coin/frame_03_delay-0.05s.png" type="Texture" id=18]
+[ext_resource path="res://image/game/coin/frame_08_delay-0.05s.png" type="Texture" id=19]
+[ext_resource path="res://image/game/coin/frame_11_delay-0.05s.png" type="Texture" id=20]
+[ext_resource path="res://image/game/coin/frame_12_delay-0.05s.png" type="Texture" id=21]
+[ext_resource path="res://image/game/coin/frame_07_delay-0.05s.png" type="Texture" id=22]
 
 [sub_resource type="DynamicFont" id=1]
-size = 56
+size = 80
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=2]
@@ -22,6 +40,14 @@ border_color = Color( 0, 0, 0, 1 )
 [sub_resource type="DynamicFont" id=5]
 size = 45
 font_data = ExtResource( 1 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ ExtResource( 10 ), ExtResource( 12 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 22 ), ExtResource( 19 ), ExtResource( 16 ), ExtResource( 8 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 14 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 15 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 29.0
+} ]
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -42,19 +68,20 @@ __meta__ = {
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-margin_right = 1024.0
-margin_bottom = 81.0
+margin_left = 0.741882
+margin_top = 29.6768
+margin_right = 1024.74
+margin_bottom = 110.677
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Title" type="Label" parent="CenterContainer"]
-margin_left = 451.0
-margin_top = 12.0
-margin_right = 573.0
-margin_bottom = 68.0
+margin_left = 334.0
+margin_right = 689.0
+margin_bottom = 80.0
 custom_fonts/font = SubResource( 1 )
-text = "Titulo"
+text = "InvestMania"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -117,6 +144,13 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 708.535, 390.251 )
+scale = Vector2( 10, 10 )
+frames = SubResource( 6 )
+frame = 6
+playing = true
 
 [connection signal="pressed" from="VBoxContainer/Play" to="VBoxContainer/Play" method="_on_Play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Rules" to="VBoxContainer/Rules" method="_on_Rules_pressed"]
