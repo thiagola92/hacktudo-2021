@@ -16,7 +16,7 @@ func _ready():
 
 func _on_Buy_pressed():
 	position = get_meta("position")
-	stock = Global.newStock[position]
+	stock = GlobalStocks.newStock[position]
 	
 	$ConfirmationDialog/CenterContainer/HSlider.max_value = Global.money
 	$ConfirmationDialog.popup_centered()
@@ -28,8 +28,9 @@ func _on_ConfirmationDialog_ok_pressed():
 	if initial_stock == 0:
 		return
 	
-	for pos in range(0, Global.ownedStock.size()):
-		var s = Global.ownedStock[pos]
+	Global.passTime(0, 15)
+	for pos in range(0, GlobalStocks.ownedStock.size()):
+		var s = GlobalStocks.ownedStock[pos]
 		
 		if s['name'] == stock['name']:
 			return increase_initial_stock(initial_stock, pos)
@@ -37,20 +38,20 @@ func _on_ConfirmationDialog_ok_pressed():
 	add_new_initial_stock(initial_stock)
 
 func increase_initial_stock(initial_stock, pos):
-	var s = Global.ownedStock[pos]
+	var s = GlobalStocks.ownedStock[pos]
 	
 	s['initial_stock'] += initial_stock
 	s['current_stock'] += initial_stock
 	s['balance'] += initial_stock
-	s['variation'] = Global.calc_variation(s['initial_stock'], s['current_stock'])
+	s['variation'] = GlobalStocks.calc_variation(s['initial_stock'], s['current_stock'])
 	
-	Global.ownedStock[pos] = s
+	GlobalStocks.ownedStock[pos] = s
 	Global.money -= initial_stock
 	
 	emit_signal("on_buy")
 
 func add_new_initial_stock(initial_stock):
-	Global.ownedStock.append({
+	GlobalStocks.ownedStock.append({
 		'name': stock['name'],
 		'initial_stock': initial_stock,
 		'current_stock': initial_stock,

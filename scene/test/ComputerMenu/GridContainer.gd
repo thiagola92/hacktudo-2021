@@ -2,9 +2,9 @@ extends GridContainer
 
 
 func _ready():
-	for i in range(0, GlobalTest.newStock.size()):
-		add_line(GlobalTest.newStock[i])
-
+#	for i in range(0, GlobalTest.newStock.size()):
+#		add_line(GlobalTest.newStock[i])
+	pass
 
 func add_line(line):
 	var label_name = Control.new()
