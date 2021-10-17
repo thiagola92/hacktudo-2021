@@ -6,6 +6,7 @@ const base_more = """[color=yellow]Humor[/color]: %s
 [color=lime]Pagamento[/color]: R$%s
 Não faltar mais que [color=red]%s[/color] dias"""
 
+signal job_selected
 
 func _ready():
 	$More.hide()
@@ -15,6 +16,13 @@ func set_job(job):
 	$Line/Title.text = job['name']
 	set_duration(job['time'])
 	set_more(job['humor'], job['health'], job['pay'], job['daysUntilFired'])
+	set_button(job)
+
+func set_button (job):
+	if GlobalJobs.changedJobs:
+		$More/Select.disabled = true
+	else:
+		$More/Select.set_meta('job', job)
 
 
 func set_duration(duration):
@@ -33,9 +41,6 @@ func _on_Line_gui_input(event):
 	elif Input.is_action_just_pressed("ui_left_click") and $More.visible:
 		$More.hide()
 
-
-func _on_Select_gui_input(event):
-	print(event)
-	if Input.is_action_just_pressed("ui_left_click"):
-		pass
-	pass # Replace with function body.
+func _on_Select_pressed():
+	GlobalJobs.changeJobs($More/Select.get_meta('job'))
+	emit_signal('job_selected')

@@ -53,6 +53,11 @@ func resetDay():
 	
 func resetJobBlock ():
 	changedJobs = false;
+
+func changeJobs(job):
+	currentJob = job
+	changedJobs = true
+	var daysWithoutWork = 0
 	
 func verify_job ():
 	if currentJob['daysUntilFired'] <= daysWithoutWork:

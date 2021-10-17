@@ -18,6 +18,7 @@ func add_jobs():
 	for j in GlobalJobs.disponibleJobs:
 		var job = Job.instance()
 		job.set_job(j)
+		job.connect("job_selected", self, 'reload')
 		add_child(job)
 
 
