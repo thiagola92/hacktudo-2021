@@ -32,3 +32,10 @@ func _on_Line_gui_input(event):
 		$More.show()
 	elif Input.is_action_just_pressed("ui_left_click") and $More.visible:
 		$More.hide()
+
+
+func _on_Select_gui_input(event):
+	print(event)
+	if Input.is_action_just_pressed("ui_left_click"):
+		pass
+	pass # Replace with function body.
