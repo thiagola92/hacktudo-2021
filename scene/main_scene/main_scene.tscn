@@ -163,10 +163,10 @@ __meta__ = {
 [node name="Scene" type="Node2D" parent="."]
 
 [node name="background" type="ColorRect" parent="Scene"]
-margin_left = -1582.0
-margin_top = -28.0
-margin_right = 1632.0
-margin_bottom = 613.0
+margin_left = -2009.0
+margin_top = -460.0
+margin_right = 2393.0
+margin_bottom = 1070.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -637,7 +637,7 @@ position = Vector2( -1398.75, 503.075 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 3 )
 animation = "bark"
-frame = 2
+frame = 3
 playing = true
 offset = Vector2( 0, -12 )
 script = ExtResource( 59 )
@@ -765,7 +765,6 @@ visible = false
 [node name="Door" parent="Camera2D/HUD/Canvas" instance=ExtResource( 86 )]
 
 [node name="Bed" parent="Camera2D/HUD/Canvas" instance=ExtResource( 84 )]
-visible = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 10.0
