@@ -7,6 +7,9 @@ var currentDay = 1
 var health = 100
 var humor = 100
 
+var daysPassed = 1;
+var amountCharged = 1000
+
 func _ready():
 	pass
 
@@ -51,4 +54,15 @@ func passTime (hourSpent, minuteSpent):
 	
 func passDay ():
 	Global.currentDay += 1
-		
+	GlobalNews.pick_two()
+	GlobalStocks.calc_stocks()
+	GlobalJobs.resetDay()
+	
+	daysPassed += 1
+	if (daysPassed == 7):
+		money -= amountCharged
+		daysPassed = 1
+		amountCharged = amountCharged * 1.5
+	
+	if (money < 0): # game over
+		pass
