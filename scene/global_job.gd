@@ -2,6 +2,7 @@ extends Node
 
 var daysWithoutWork = 0
 var workedToday = false
+var changedJobs = false;
 
 var disponibleJobs = []
 var currentJob
