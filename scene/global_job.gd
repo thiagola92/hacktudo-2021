@@ -68,7 +68,7 @@ func changeJobs(job):
 	var daysWithoutWork = 0
 	
 func verify_job ():
-	if currentJob['daysUntilFired'] <= daysWithoutWork:
+	if (currentJob && currentJob['daysUntilFired'] <= daysWithoutWork):
 		currentJob = null
 
 func pick_tree ():

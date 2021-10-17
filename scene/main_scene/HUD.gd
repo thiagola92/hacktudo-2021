@@ -13,7 +13,11 @@ func _process(delta):
 	$clockLabel.text = Global.time
 	$moneyLabel.text = String(Global.money)
 	$mentalHealth_fill.value = Global.humor
-	$health_fill.value = Global.health	
+	$health_fill.value = Global.health
+	process_debt()
+	
+func process_debt():
+	$debtLabel.text = "Dias até o pagamento: %s\n(Dívida atual: R$%s)" % [str(7 - Global.daysPassed), str(Global.amountCharged)]
 
 func _on_computer_gui_input(event):
 	if Input.is_action_just_pressed("ui_left_click"):
