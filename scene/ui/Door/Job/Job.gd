@@ -1,17 +1,31 @@
 extends VBoxContainer
 
 
+const base_more = """
+[color=yellow]Humor[/color]: %s
+[color=aqua]Saúde[/color]: %s
+[color=lime]Pagamento[/color]: R$%s
+[color=red]Não faltar mais que %s dias[/color]
+"""
+
+
 func _ready():
-	pass
+	$More.hide()
+
+
+func set_job(job):
+	$Line/Title.text = job['name']
+	set_duration(job['time'])
+	set_more(job['humor'], job['health'], job['pay'], job['daysUntilFired'])
 
 
 func set_duration(duration):
 	$Line/Duration.text = "Duration: %s" % str(duration)
 
 
-func set_more(humor, health, pay):
-	$More/RichTextLabel.text = "Humor: %s\nSaúde: %s\nPagamento: R$%s" % [
-		str(humor), str(health), str(pay)
+func set_more(humor, health, pay, days_until_fired):
+	$More/RichTextLabel.text = base_more % [
+		str(humor), str(health), str(pay), str(days_until_fired)
 	]
 
 
