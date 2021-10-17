@@ -6,13 +6,9 @@ var ownedStock : Array = []
 
 
 func _ready():
-	add_newStock('xxx', -40, 10, 25, 'Financeiro', 'CDB')
-	add_newStock('yyy', 40, 50, 50, 'Tecnológico', 'Tesouro Direto')
-	add_newStock('zzz', 30, -50, 75, 'Oléo & Gás', 'Ação')
-
-	add_ownedStock('xxx', 12345.00, 23456.00, 24456.00, 'Financeiro', 'CDB')
-	add_ownedStock('yyy', 67890.00, 78901.00, 77901.00, 'Tecnológico', 'Tesouro Direto')
-	add_ownedStock('zzz', 100.00, 20.00, 20.00, 'Oléo & Gás', 'Ação')
+	add_newStock('Ação #1', -0.4, 0.1, 25, 'Financeiro', 'CDB')
+	add_newStock('Ação #2', 0.6, 0.3, 50, 'Tecnológico', 'Tesouro Direto')
+	add_newStock('Ação #3', 0.3, -0.6, 75, 'Oléo & Gás', 'Ação')
 
 func add_newStock(_name, index, variation, risk, cluster, _type):
 	newStock.append({

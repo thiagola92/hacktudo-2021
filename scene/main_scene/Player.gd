@@ -8,7 +8,7 @@ var snapPosition = Vector2()
 
 var path : PoolVector2Array
 
-export var speed = 300
+export var speed = 400
 
 enum{IDLE, MOVE, INTERACT}
 

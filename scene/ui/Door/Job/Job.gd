@@ -1,12 +1,10 @@
 extends VBoxContainer
 
 
-const base_more = """
-[color=yellow]Humor[/color]: %s
+const base_more = """[color=yellow]Humor[/color]: %s
 [color=aqua]Saúde[/color]: %s
 [color=lime]Pagamento[/color]: R$%s
-Não faltar mais que [color=red]%s[/color] dias
-"""
+Não faltar mais que [color=red]%s[/color] dias"""
 
 
 func _ready():

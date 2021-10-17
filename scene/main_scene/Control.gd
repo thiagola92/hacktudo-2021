@@ -6,6 +6,7 @@ var busyPopup = false
 onready var nav2D : Navigation2D = $NavigationPolygon
 onready var line2D : Line2D = $Line2D
 onready var Player : AnimatedSprite = $Player
+onready var Dog : AnimatedSprite = $Dog
 
 func _process(_delta):
 	if ($Player.position.x < -1040):
@@ -16,6 +17,9 @@ func _process(_delta):
 		$Camera2D.position.x = $Player.position.x
 
 func _input(_event): 
+	if Input.is_action_just_pressed("ui_cancel") and not busyPopup:
+		return $Camera2D/HUD/Canvas/PauseMenu.pause()
+		
 	if !Input.is_action_just_pressed("ui_left_click") || busyPopup:
 		return
 	
@@ -42,7 +46,23 @@ func _on_Window_about_to_show():
 func _on_Window_popup_hide():
 	busyPopup = false
 
+func _on_RefrigeratorWindow_about_to_show():
+	busyPopup = true
 
 
-func _on_WindowDialog_about_to_show():
-	pass # Replace with function body.
+func _on_RefrigeratorWindow_popup_hide():
+	busyPopup = false
+
+
+func _on_Timer_timeout():
+	var variation = rand_range(-500, 500)
+
+	var newPosition = Dog.get_global_position()
+	newPosition.x += variation
+
+	var new_path = nav2D.get_simple_path(Dog.get_global_position(), newPosition)
+	
+	line2D.points = new_path 
+	
+	Dog.path = new_path
+	Dog.change_state(MOVE)
