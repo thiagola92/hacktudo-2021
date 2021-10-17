@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://font/hf-free-complete/equipment-pro-v1.1/EquipmentPro.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://scene/start_screen/Exit.gd" type="Script" id=2]
 [ext_resource path="res://scene/start_screen/Title.gd" type="Script" id=3]
+[ext_resource path="res://image/game/pngegg.png" type="Texture" id=4]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.521569, 0.305882, 0.152941, 1 )
@@ -21,6 +22,20 @@ font_data = ExtResource( 1 )
 [sub_resource type="DynamicFont" id=5]
 size = 56
 font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFontData" id=6]
+font_path = "res://font/hf-free-complete/equipment-pro-v1.1/EquipmentPro.otf"
+
+[sub_resource type="DynamicFont" id=7]
+size = 33
+font_data = SubResource( 6 )
+
+[sub_resource type="DynamicFontData" id=8]
+font_path = "res://font/hf-free-complete/equipment-pro-v1.1/EquipmentPro.otf"
+
+[sub_resource type="DynamicFont" id=9]
+size = 28
+font_data = SubResource( 8 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -74,6 +89,39 @@ margin_bottom = 68.0
 custom_fonts/font = SubResource( 5 )
 text = "Instruções"
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 800.533
+margin_top = 377.638
+margin_right = 1312.53
+margin_bottom = 889.638
+rect_scale = Vector2( 0.4, 0.4 )
+texture = ExtResource( 4 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 31.7415
+margin_top = 81.7419
+margin_right = 1062.74
+margin_bottom = 494.742
+custom_fonts/normal_font = SubResource( 7 )
+text = "Seu propósito nesse jogo é tentar sobreviver os percalços da vida: 
+Levando uma vida complicada e sendo mal pago, você deve gerenciar seus recursos, como comida, cansaço, emprego e seu próprio dinheiro para tentar sobreviver os dias com todo o conforto que você merece.
+Você terá escolhas entre trabalhar, dormir, cozinhar ou pedir comida e, mais importante de tudo: perseguir sua independência financeira através de investimentos e economias! Compre móveis novos, redecore sua casa, viva uma vida tranquila sem precisar trabalhar... As escolhas são apenas suas!
+Quanto tempo você levará para alcançar seu tão sonhado milhão?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 263.067
+margin_top = 419.614
+margin_right = 1065.07
+margin_bottom = 805.614
+custom_fonts/normal_font = SubResource( 9 )
+text = "Todas as ações do jogo são feitas apenas com o clique do mouse!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
