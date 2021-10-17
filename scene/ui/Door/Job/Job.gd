@@ -5,7 +5,7 @@ const base_more = """
 [color=yellow]Humor[/color]: %s
 [color=aqua]Saúde[/color]: %s
 [color=lime]Pagamento[/color]: R$%s
-[color=red]Não faltar mais que %s dias[/color]
+Não faltar mais que [color=red]%s[/color] dias
 """
 
 
@@ -24,7 +24,7 @@ func set_duration(duration):
 
 
 func set_more(humor, health, pay, days_until_fired):
-	$More/RichTextLabel.text = base_more % [
+	$More/RichTextLabel.bbcode_text = base_more % [
 		str(humor), str(health), str(pay), str(days_until_fired)
 	]
 
