@@ -4,8 +4,9 @@
 [ext_resource path="res://image/ui/Untitled.png" type="Texture" id=2]
 
 [node name="TimeAnimation" type="TextureProgress"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 100.0
+margin_bottom = 100.0
+rect_scale = Vector2( 0.5, 0.5 )
 texture_progress = ExtResource( 2 )
 fill_mode = 4
 script = ExtResource( 1 )

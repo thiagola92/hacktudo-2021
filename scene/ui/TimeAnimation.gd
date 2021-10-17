@@ -1,23 +1,17 @@
 extends TextureProgress
 
 
-var running = false
-
-
 func _ready():
-	start()
-
-
-func start():
-	value = 0
-	
-	show()
+	pass
 
 
 func _process(delta):
-	value += 2
+	if Global.time_elapsing:
+		value += 2
+	else:
+		value = 0
 
 
 func _on_TimeAnimation_value_changed(value):
 	if value == 100:
-		hide()
+		Global.time_elapsing = false

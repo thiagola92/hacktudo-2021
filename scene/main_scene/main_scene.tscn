@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=2]
+[gd_scene load_steps=101 format=2]
 
 [ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/living-floor.png" type="Texture" id=1]
 [ext_resource path="res://image/game/House_interior_by_Styl0o/living/individuals files/living-wall.png" type="Texture" id=2]
@@ -86,6 +86,7 @@
 [ext_resource path="res://scene/ui/BedMenu/BedMenu.tscn" type="PackedScene" id=84]
 [ext_resource path="res://scene/ui/ArmchairMenu/ArmchairMenu.tscn" type="PackedScene" id=85]
 [ext_resource path="res://scene/ui/Door/Door.tscn" type="PackedScene" id=86]
+[ext_resource path="res://scene/ui/TimeAnimation.tscn" type="PackedScene" id=87]
 
 [sub_resource type="DynamicFont" id=1]
 size = 36
@@ -99,6 +100,11 @@ outlines = [ PoolVector2Array( 1562.19, 497.353, 1567.04, 537.102, -1514.56, 542
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
+"frames": [ ExtResource( 42 ), ExtResource( 41 ), ExtResource( 44 ), ExtResource( 40 ), ExtResource( 45 ), ExtResource( 38 ), ExtResource( 39 ) ],
+"loop": true,
+"name": "idle",
+"speed": 12.0
+}, {
 "frames": [  ],
 "loop": true,
 "name": "interact",
@@ -108,29 +114,24 @@ animations = [ {
 "loop": true,
 "name": "run",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 42 ), ExtResource( 41 ), ExtResource( 44 ), ExtResource( 40 ), ExtResource( 45 ), ExtResource( 38 ), ExtResource( 39 ) ],
-"loop": true,
-"name": "idle",
-"speed": 12.0
 } ]
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ ExtResource( 64 ), ExtResource( 63 ), ExtResource( 68 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ) ],
+"frames": [ ExtResource( 61 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ) ],
 "loop": true,
-"name": "run",
-"speed": 5.0
+"name": "idle",
+"speed": 12.0
 }, {
 "frames": [ ExtResource( 55 ), ExtResource( 62 ), ExtResource( 60 ), ExtResource( 69 ) ],
 "loop": true,
 "name": "bark",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 61 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ) ],
+"frames": [ ExtResource( 64 ), ExtResource( 63 ), ExtResource( 68 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ) ],
 "loop": true,
-"name": "idle",
-"speed": 12.0
+"name": "run",
+"speed": 5.0
 } ]
 
 [sub_resource type="DynamicFont" id=5]
@@ -693,6 +694,7 @@ position = Vector2( 1108.78, 499.729 )
 scale = Vector2( 6.95575, 6.76008 )
 frames = SubResource( 3 )
 animation = "idle"
+frame = 5
 playing = true
 offset = Vector2( 0, -42 )
 script = ExtResource( 43 )
@@ -824,11 +826,15 @@ margin_right = -239.047
 margin_bottom = 168.641
 
 [node name="Armchair" parent="Camera2D/HUD/Canvas" instance=ExtResource( 85 )]
-visible = false
 
 [node name="Door" parent="Camera2D/HUD/Canvas" instance=ExtResource( 86 )]
+visible = false
 
 [node name="Bed" parent="Camera2D/HUD/Canvas" instance=ExtResource( 84 )]
+
+[node name="TimeAnimation" parent="Camera2D/HUD/Canvas" instance=ExtResource( 87 )]
+margin_top = 79.0
+margin_bottom = 179.0
 
 [node name="debtLabel" type="RichTextLabel" parent="Camera2D/HUD"]
 margin_left = 1115.0

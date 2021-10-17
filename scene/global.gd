@@ -9,6 +9,7 @@ var humor = 100
 
 var daysPassed = 1;
 var amountCharged = 1000
+var time_elapsing = false
 
 func _ready():
 	pass
@@ -51,6 +52,8 @@ func passTime (hourSpent, minuteSpent):
 		 Global.time += ":0" + String(currentTime[1])
 	else:
 		Global.time += ":" + String(currentTime[1])
+	
+	Global.time_elapsing = true
 	
 func passDay ():
 	Global.currentDay += 1
