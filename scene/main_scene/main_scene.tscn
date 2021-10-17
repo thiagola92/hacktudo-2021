@@ -104,14 +104,14 @@ animations = [ {
 "name": "idle",
 "speed": 12.0
 }, {
-"frames": [  ],
-"loop": true,
-"name": "interact",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 54 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 50 ), ExtResource( 52 ), ExtResource( 51 ), ExtResource( 49 ), ExtResource( 53 ) ],
 "loop": true,
 "name": "run",
+"speed": 5.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "interact",
 "speed": 5.0
 } ]
 
@@ -686,7 +686,7 @@ position = Vector2( 1108.78, 499.729 )
 scale = Vector2( 6.95575, 6.76008 )
 frames = SubResource( 3 )
 animation = "idle"
-frame = 5
+frame = 4
 playing = true
 offset = Vector2( 0, -42 )
 script = ExtResource( 43 )
@@ -696,6 +696,7 @@ position = Vector2( -1398.75, 503.075 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 4 )
 animation = "bark"
+frame = 1
 playing = true
 offset = Vector2( 0, -12 )
 script = ExtResource( 59 )
