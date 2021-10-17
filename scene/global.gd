@@ -69,4 +69,4 @@ func passDay ():
 		GlobalJobs.resetJobBlock()
 	
 	if (money < 0): # game over
-		pass
+		get_tree().change_scene("res://scene/game_over/game_over.tscn")
