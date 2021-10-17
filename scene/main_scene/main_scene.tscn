@@ -91,11 +91,6 @@ outlines = [ PoolVector2Array( 1562.19, 497.353, 1567.04, 537.102, -1514.56, 542
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 42 ), ExtResource( 41 ), ExtResource( 44 ), ExtResource( 40 ), ExtResource( 45 ), ExtResource( 38 ), ExtResource( 39 ) ],
-"loop": true,
-"name": "idle",
-"speed": 12.0
-}, {
 "frames": [ ExtResource( 54 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 50 ), ExtResource( 52 ), ExtResource( 51 ), ExtResource( 49 ), ExtResource( 53 ) ],
 "loop": true,
 "name": "run",
@@ -105,19 +100,24 @@ animations = [ {
 "loop": true,
 "name": "interact",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 42 ), ExtResource( 41 ), ExtResource( 44 ), ExtResource( 40 ), ExtResource( 45 ), ExtResource( 38 ), ExtResource( 39 ) ],
+"loop": true,
+"name": "idle",
+"speed": 12.0
 } ]
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 61 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 56 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 64 ), ExtResource( 63 ), ExtResource( 68 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ) ],
 "loop": true,
 "name": "run",
 "speed": 12.0
+}, {
+"frames": [ ExtResource( 61 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 56 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 55 ), ExtResource( 62 ), ExtResource( 60 ), ExtResource( 69 ) ],
 "loop": true,
@@ -734,11 +734,21 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Window" parent="Camera2D/HUD" instance=ExtResource( 81 )]
-visible = true
+[node name="Canvas" type="CanvasLayer" parent="Camera2D/HUD"]
 
-[node name="WindowDialog" parent="Camera2D/HUD" instance=ExtResource( 82 )]
+[node name="Window" parent="Camera2D/HUD/Canvas" instance=ExtResource( 81 )]
 visible = true
+margin_left = -848.139
+margin_top = -170.646
+margin_right = -233.139
+margin_bottom = 158.354
+
+[node name="RefrigeratorWindow" parent="Camera2D/HUD/Canvas" instance=ExtResource( 82 )]
+visible = true
+margin_left = -895.047
+margin_top = -233.359
+margin_right = -239.047
+margin_bottom = 168.641
 
 [connection signal="gui_input" from="Scene/living_room/board" to="Scene/living_room" method="_on_board_gui_input"]
 [connection signal="gui_input" from="Scene/living_room/table" to="Scene/living_room" method="_on_table_gui_input"]
@@ -773,7 +783,7 @@ visible = true
 [connection signal="gui_input" from="Scene/kitchen/dirt_laundry" to="Scene/kitchen" method="_on_dirt_laundry_gui_input"]
 [connection signal="gui_input" from="Scene/kitchen/door" to="Scene/kitchen" method="_on_door_gui_input"]
 [connection signal="gui_input" from="Scene/bookcase" to="." method="_on_bookcase_gui_input"]
-[connection signal="about_to_show" from="Camera2D/HUD/Window" to="." method="_on_Window_about_to_show"]
-[connection signal="popup_hide" from="Camera2D/HUD/Window" to="." method="_on_Window_popup_hide"]
-[connection signal="about_to_show" from="Camera2D/HUD/WindowDialog" to="Camera2D/HUD" method="_on_WindowDialog_about_to_show"]
-[connection signal="popup_hide" from="Camera2D/HUD/WindowDialog" to="Camera2D/HUD/WindowDialog" method="_on_WindowDialog_popup_hide"]
+[connection signal="about_to_show" from="Camera2D/HUD/Canvas/Window" to="." method="_on_Window_about_to_show"]
+[connection signal="popup_hide" from="Camera2D/HUD/Canvas/Window" to="." method="_on_Window_popup_hide"]
+[connection signal="about_to_show" from="Camera2D/HUD/Canvas/RefrigeratorWindow" to="." method="_on_RefrigeratorWindow_about_to_show"]
+[connection signal="popup_hide" from="Camera2D/HUD/Canvas/RefrigeratorWindow" to="." method="_on_RefrigeratorWindow_popup_hide"]

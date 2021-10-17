@@ -42,7 +42,9 @@ func _on_Window_about_to_show():
 func _on_Window_popup_hide():
 	busyPopup = false
 
+func _on_RefrigeratorWindow_about_to_show():
+	busyPopup = true
 
 
-func _on_WindowDialog_about_to_show():
-	pass # Replace with function body.
+func _on_RefrigeratorWindow_popup_hide():
+	busyPopup = false

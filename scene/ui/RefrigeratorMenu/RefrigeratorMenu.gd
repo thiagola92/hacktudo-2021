@@ -77,3 +77,7 @@ func _on_WindowDialog_popup_hide():
 
 func _on_WindowDialog_about_to_show():
 	pass # Replace with function body.
+
+
+func _on_RefrigeratorWindow_about_to_show():
+	pass # Replace with function body.
